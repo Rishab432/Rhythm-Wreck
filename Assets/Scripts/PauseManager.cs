@@ -45,6 +45,14 @@ public class PauseManager : MonoBehaviour
         SceneManager.LoadScene("GameSelect");
     }
 
+    public void ToFileSelect()
+    {
+        _pauseMenu.SetActive(false);
+        _pauseButton.SetActive(true);
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("FileSelect");
+    }
+
     public void QuitGame()
     {
         // Write the save code call here.
