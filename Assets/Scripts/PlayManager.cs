@@ -7,40 +7,25 @@ using System.ComponentModel;
 
 public class PlayManager : MonoBehaviour
 {
-    public static PlayManager Instance;
-
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-
     void Update()
     {
         if (SceneManager.GetActiveScene().name == "Start")
         {
             if (Input.GetKeyDown(KeyCode.Return) || Input.GetMouseButtonDown(0))
             {
-                ToPlayerSelect();
+                ToFileSelect();
             }
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            // Write the save code call here.
+            DataManager.Instance.SaveData();
             Application.Quit();
         }
     }
 
-    public void ToPlayerSelect()
+    public void ToFileSelect()
     {
-        SceneManager.LoadScene("PlayerSelect");
+        SceneManager.LoadScene("FileSelect");
     }
 
     public void ToGameSelect()
@@ -55,7 +40,7 @@ public class PlayManager : MonoBehaviour
 
     public void QuitGame()
     {
-        // Write the save code call here.
+        DataManager.Instance.SaveData();
         Application.Quit();
     }
 }
