@@ -23,7 +23,6 @@ public class KeybindManager : MonoBehaviour
             Event currentEvent = Event.current;
             if (Input.anyKeyDown)
             {
-                Input.
                 _keybinds[_setKey] = currentEvent.keyCode;
                 DataManager.Instance.Data.Keybinds[_setKey] = _keybinds[_setKey];
                 if (_setKey == "Up") _upBind.text = _keybinds[_setKey].ToString();
