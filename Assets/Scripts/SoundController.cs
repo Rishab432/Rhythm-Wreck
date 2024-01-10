@@ -10,7 +10,7 @@ public class NewBehaviourScript : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _bgmSliderText, _sfxSliderText;
     [SerializeField] private bool _toggleBGM, _toggleSFX;
 
-    private void OnEnable()
+    void OnEnable()
     {
         _bgmSlider.value = DataManager.Instance.Data.BGMSliderVal;
         _sfxSlider.value = DataManager.Instance.Data.SFXSliderVal;

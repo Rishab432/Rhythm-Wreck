@@ -65,35 +65,32 @@ public class FileSelect : MonoBehaviour
     public void FirstFileSelect()
     {
         if (string.IsNullOrWhiteSpace(DataManager.Instance.Data.FileName1))
-        {
             SetFileName(1);
-        }
+        else
+            SceneManager.LoadScene("GameSelect");
     }
 
     public void SecondFileSelect()
     {
         if (string.IsNullOrWhiteSpace(DataManager.Instance.Data.FileName2))
-        {
             SetFileName(2);
-        }
-        SceneManager.LoadScene("GameSelect");
+        else
+            SceneManager.LoadScene("GameSelect");
     }
 
     public void ThirdFileSelect()
     {
         if (string.IsNullOrWhiteSpace(DataManager.Instance.Data.FileName3))
-        {
             SetFileName(3);
-        }
-        SceneManager.LoadScene("GameSelect");
+        else
+            SceneManager.LoadScene("GameSelect");
     }
 
     public void FourthFileSelect()
     {
         if (string.IsNullOrWhiteSpace(DataManager.Instance.Data.FileName4))
-        {
             SetFileName(4);
-        }
-        SceneManager.LoadScene("GameSelect");
+        else
+            SceneManager.LoadScene("GameSelect");
     }
 }
