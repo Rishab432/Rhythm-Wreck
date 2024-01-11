@@ -8,7 +8,7 @@ public class NewBehaviourScript : MonoBehaviour
 {
     [SerializeField] private Slider _bgmSlider, _sfxSlider;
     [SerializeField] private TextMeshProUGUI _bgmSliderText, _sfxSliderText;
-    [SerializeField] private bool _toggleBGM, _toggleSFX;
+    [SerializeField] private Toggle _toggleBGM, _toggleSFX;
 
     void OnEnable()
     {
@@ -16,8 +16,8 @@ public class NewBehaviourScript : MonoBehaviour
         _sfxSlider.value = DataManager.Instance.Data.SFXSliderVal;
         _bgmSliderText.text = _bgmSlider.value.ToString("0.00");
         _sfxSliderText.text = _sfxSlider.value.ToString("0.00");
-        _toggleBGM = DataManager.Instance.Data.BGMToggle;
-        _toggleSFX = DataManager.Instance.Data.SFXToggle;
+        _toggleBGM.isOn = DataManager.Instance.Data.BGMToggle;
+        _toggleSFX.isOn = DataManager.Instance.Data.SFXToggle;
     }
 
     void Start()
@@ -38,9 +38,15 @@ public class NewBehaviourScript : MonoBehaviour
         });
     }
 
-    public void Toggle()
+    public void ToggleBGM()
     {
-        if (_toggleBGM) SoundManager.Instance.ToggleBGM(); DataManager.Instance.Data.BGMToggle = _toggleBGM;
-        if (_toggleSFX) SoundManager.Instance.ToggleSFX(); DataManager.Instance.Data.SFXToggle = _toggleSFX;
+        SoundManager.Instance.ToggleBGM(_toggleBGM.isOn);
+        DataManager.Instance.Data.BGMToggle = _toggleBGM.isOn;
+    }
+
+    public void ToggleSFX()
+    {
+        SoundManager.Instance.ToggleBGM(_toggleSFX.isOn);
+        DataManager.Instance.Data.SFXToggle = _toggleSFX.isOn;
     }
 }
