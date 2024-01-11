@@ -4,6 +4,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using UnityEngine;
 using System;
+using Unity.VisualScripting;
 
 public class DataManager : MonoBehaviour
 {
@@ -20,10 +21,10 @@ public class DataManager : MonoBehaviour
         public int Score2 { get; set; }
         public int Score3 { get; set; }
         public int Score4 { get; set; }
-        public float BGMSliderVal { get; set; }
-        public float SFXSliderVal { get; set; }
-        public bool BGMToggle { get; set; }
-        public bool SFXToggle { get; set; }
+        public float BGMSliderVal { get; set; } = 1.00f;
+        public float SFXSliderVal { get; set; } = 1.00f;
+        public bool BGMToggle { get; set; } = true;
+        public bool SFXToggle { get; set; } = true;
 
         public Dictionary<string, KeyCode> Keybinds = new()
         {
@@ -49,7 +50,6 @@ public class DataManager : MonoBehaviour
             Destroy(gameObject);
         }
         LoadData();
-        Debug.Log(Data.ToString());
     }
 
     public void SaveData()
