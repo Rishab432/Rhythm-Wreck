@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -54,13 +55,13 @@ public class SoundManager : MonoBehaviour
         _sfxSource.volume = value;
     }
 
-    public void ToggleSFX()
+    public void ToggleBGM(bool isOn)
     {
-        _sfxSource.mute = !_sfxSource.mute;
+        _bgmSource.mute = !isOn;
     }
 
-    public void ToggleBGM()
+    public void ToggleSFX(bool isOn)
     {
-        _bgmSource.mute = !_bgmSource.mute;
+        _sfxSource.mute = !isOn;
     }
 }
