@@ -6,6 +6,7 @@ public class NoteActuator : MonoBehaviour
 {
     public KeyCode key;
     bool active = false;
+    GameObject note;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,13 +16,20 @@ public class NoteActuator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(key) && active)
+        {
+            Destroy(note);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
         active = true;
         if (col.gameObject.tag == "Note")
-            Destroy(col.gameObject);
+            note = col.gameObject;
+    }
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        active = false; 
     }
 }
