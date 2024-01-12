@@ -5,6 +5,7 @@ using UnityEngine;
 public class NoteActuator : MonoBehaviour
 {
     public KeyCode key;
+    static public int Combo;
     bool active = false;
     GameObject note;
     Color old;
@@ -22,7 +23,11 @@ public class NoteActuator : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().color = new Color(0,0,0);
             if(active)
+            {
                 Destroy(note);
+                Combo += 1;
+                Debug.Log(Combo);
+            }
         }
         if (Input.GetKeyUp(key))
             GetComponent<SpriteRenderer>().color = old;
