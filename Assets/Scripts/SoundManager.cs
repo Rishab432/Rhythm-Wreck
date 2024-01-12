@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class SoundManager : MonoBehaviour
@@ -9,7 +11,9 @@ public class SoundManager : MonoBehaviour
     public static SoundManager Instance;
 
     [SerializeField] private AudioSource _bgmSource, _sfxSource;
+    [SerializeField] private AudioClip[] _audios;
     [SerializeField] private AudioClip _sfxClip;
+    [SerializeField] private AudioMixer _mixer;
 
     void Awake()
     {
@@ -23,17 +27,20 @@ public class SoundManager : MonoBehaviour
             Destroy(gameObject);
         }
         _bgmSource.loop = true;
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    void OnSceneLoaded(Scene scene)
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "Settings")
+        AudioClip newClip = null;
+        if (scene.name == "Start" || scene.name == "FileSelect") newClip = _audios[0];
+        if (scene.name == "Settings") newClip = _audios[1];
+
+        if (newClip != _bgmSource.clip)
         {
-            // Write set volumes and toggles from GameData.
-            _bgmSource.volume = 1.0f;
-            _bgmSource.mute = false;
-            _sfxSource.volume = 1.0f;
-            _sfxSource.mute = false;
+            _bgmSource.enabled = false;
+            _bgmSource.clip = newClip;
+            _bgmSource.enabled = true;
         }
     }
 
