@@ -25,6 +25,8 @@ public class PlayManager : MonoBehaviour
 
     public void ToFileSelect()
     {
+        DataManager.Instance.SaveData();
+        DataManager.Instance.LoadData();
         SceneManager.LoadScene("FileSelect");
     }
 

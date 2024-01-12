@@ -36,7 +36,7 @@ public class SoundManager : MonoBehaviour
         if (scene.name == "Start" || scene.name == "FileSelect") newClip = _audios[0];
         if (scene.name == "Settings") newClip = _audios[1];
 
-        if (newClip != _bgmSource.clip)
+        if (newClip != _bgmSource.clip && newClip != null)
         {
             _bgmSource.enabled = false;
             _bgmSource.clip = newClip;

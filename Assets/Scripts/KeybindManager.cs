@@ -33,6 +33,7 @@ public class KeybindManager : MonoBehaviour
                     {
                         _keybinds[_setKey] = keyCode;
                         DataManager.Instance.Data.Keybinds[_setKey] = _keybinds[_setKey];
+                        Debug.Log(DataManager.Instance.Data.Keybinds[_setKey].ToString().ToUpper());
                         if (_setKey == "Up") _upBind.text = _keybinds[_setKey].ToString().ToUpper();
                         if (_setKey == "Down") _downBind.text = _keybinds[_setKey].ToString().ToUpper();
                         if (_setKey == "Left") _leftBind.text = _keybinds[_setKey].ToString().ToUpper();
