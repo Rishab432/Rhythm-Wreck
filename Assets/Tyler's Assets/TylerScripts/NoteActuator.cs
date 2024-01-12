@@ -7,19 +7,25 @@ public class NoteActuator : MonoBehaviour
     public KeyCode key;
     bool active = false;
     GameObject note;
+    Color old;
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+        old = GetComponent<SpriteRenderer>().color;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(key) && active)
+        if (Input.GetKeyDown(key))
         {
-            Destroy(note);
+            GetComponent<SpriteRenderer>().color = new Color(0,0,0);
+            if(active)
+                Destroy(note);
         }
+        if (Input.GetKeyUp(key))
+            GetComponent<SpriteRenderer>().color = old;
     }
 
     void OnTriggerEnter2D(Collider2D col)
