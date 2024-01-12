@@ -6,14 +6,18 @@ public class NoteActuator : MonoBehaviour
 {
     public KeyCode key;
     static public int Combo;
+    private int Score;
+    static public int TotalScore;
     bool active = false;
     GameObject note;
     Color old;
+
     
     // Start is called before the first frame update
     void Start()
     {
         old = GetComponent<SpriteRenderer>().color;
+        Score = 0;
     }
 
     // Update is called once per frame
@@ -27,6 +31,12 @@ public class NoteActuator : MonoBehaviour
                 Destroy(note);
                 Combo += 1;
                 Debug.Log(Combo);
+                Score = 100 * Combo;
+                TotalScore = TotalScore + Score; 
+
+;
+
+
             }
         }
         if (Input.GetKeyUp(key))

@@ -1,12 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class ScoreManger : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
-    public Text ComboText;
-    public Text ScoreText;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +13,15 @@ public class ScoreManger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ComboText.text = NoteActuator.Combo.ToString() + "x";
-        ScoreText.text = NoteActuator.TotalScore.ToString();
+        
     }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        Destroy(col.gameObject);
+        NoteActuator.Combo = 0;
+        Debug.Log(NoteActuator.Combo);
+    }
+
+
 }
