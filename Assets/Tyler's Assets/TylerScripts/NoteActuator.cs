@@ -31,12 +31,8 @@ public class NoteActuator : MonoBehaviour
                 Destroy(note);
                 Combo += 1;
                 Debug.Log(Combo);
-                Score = 100 * Combo;
+                Score = 97 * Combo;
                 TotalScore = TotalScore + Score; 
-
-;
-
-
             }
         }
         if (Input.GetKeyUp(key))
