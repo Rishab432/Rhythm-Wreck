@@ -34,7 +34,8 @@ public class NewBehaviourScript : MonoBehaviour
         _sfxSlider.onValueChanged.AddListener((sfxVal) =>
         {
             _sfxSliderText.text = sfxVal.ToString("0.00");
-            SoundManager.Instance.ChangeBGMVolume(sfxVal);
+            SoundManager.Instance.ChangeSFXVolume(sfxVal);
+            DataManager.Instance.Data.SFXSliderVal = sfxVal;
         });
     }
 
@@ -46,7 +47,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     public void ToggleSFX()
     {
-        SoundManager.Instance.ToggleBGM(_toggleSFX.isOn);
+        SoundManager.Instance.ToggleSFX(_toggleSFX.isOn);
         DataManager.Instance.Data.SFXToggle = _toggleSFX.isOn;
     }
 }

@@ -19,5 +19,6 @@ public class GameManger : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         Destroy(col.gameObject);
+        NoteActuator.Combo = 0;
     }
 }

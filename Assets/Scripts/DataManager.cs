@@ -67,7 +67,7 @@ public class DataManager : MonoBehaviour
         {
             BinaryFormatter binaryFormatter = new();
             FileStream fileStream = File.Open(Application.persistentDataPath + "/GameData.dat", FileMode.Open);
-            GameData Data = binaryFormatter.Deserialize(fileStream) as GameData;
+            Data = binaryFormatter.Deserialize(fileStream) as GameData;
             fileStream.Close();
         }
         else
