@@ -6,9 +6,26 @@ using UnityEngine;
 
 public class Lane : MonoBehaviour
 {
+    public static Lane Instance;
     public Melanchall.DryWetMidi.MusicTheory.NoteName noteRestriction;
     public KeyCode input;
     public GameObject notePrefab;
+    public float noteSpawnY;
+    public float noteDespawnY
+    {
+        get
+        {
+            return SongManager.Instance.noteTapY - (noteSpawnY - SongManager.Instance.noteTapY);
+        }
+    }
+    public float noteSpawnX;
+    public float noteDespawnX
+    {
+        get
+        {
+            return SongManager.Instance.noteTapX - (noteSpawnX - SongManager.Instance.noteTapX);
+        }
+    }
     List<Rock> notes = new List<Rock>();
     public List<double> timeStamps = new List<double>();
 
@@ -18,7 +35,7 @@ public class Lane : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Instance = this;
     }
     public void SetTimeStamps(Melanchall.DryWetMidi.Interaction.Note[] array)
     {

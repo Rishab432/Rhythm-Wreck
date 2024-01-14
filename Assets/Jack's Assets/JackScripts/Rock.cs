@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Rock : MonoBehaviour
 {
+
     double timeInstantiated;
     public float assignedTime;
     void Start()
@@ -24,7 +25,9 @@ public class Rock : MonoBehaviour
         }
         else
         {
-            transform.localPosition = Vector3.Lerp(Vector3.up * SongManager.Instance.noteSpawnY, Vector3.up * SongManager.Instance.noteDespawnY, t);
+            var parentGameObject = this.transform.parent.gameObject;
+            transform.localPosition = Vector3.Lerp(new Vector3(parentGameObject.GetComponent<Lane>().noteSpawnX, parentGameObject.GetComponent<Lane>().noteSpawnY,0f), new Vector3(parentGameObject.GetComponent<Lane>().noteDespawnX, parentGameObject.GetComponent<Lane>().noteDespawnY, 0f), t);
+
             GetComponent<SpriteRenderer>().enabled = true;
         }
     }

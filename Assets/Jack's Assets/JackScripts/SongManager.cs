@@ -20,16 +20,10 @@ public class SongManager : MonoBehaviour
 
     public string fileLocation;
     public float noteTime;
-    public float noteSpawnY;
-    public float noteSpawnX;
-    public float noteTapY;
-    public float noteDespawnY
-    {
-        get
-        {
-            return noteTapY - (noteSpawnY - noteTapY);
-        }
-    }
+   
+    public float noteTapY; 
+    public float noteTapX;
+
 
     public static MidiFile midiFile;
 
