@@ -13,9 +13,9 @@ public class SongManager : MonoBehaviour
     public AudioSource audioSource;
     public Lane[] lanes;
     public float songDelayInSeconds;
-    public double marginOfError; // in seconds
+    //public double marginOfError; // in seconds
 
-    public int inputDelayInMilliseconds;
+    //public int inputDelayInMilliseconds;
 
 
     public string fileLocation;

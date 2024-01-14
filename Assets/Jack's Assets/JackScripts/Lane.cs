@@ -48,6 +48,7 @@ public class Lane : MonoBehaviour
             }
         }
     }
+ 
     // Update is called once per frame
     void Update()
     {
@@ -59,44 +60,45 @@ public class Lane : MonoBehaviour
                 notes.Add(note.GetComponent<Rock>());
                 note.GetComponent<Rock>().assignedTime = (float)timeStamps[spawnIndex];
                 spawnIndex++;
+                print(notes);
             }
         }
 
-        if (inputIndex < timeStamps.Count)
-        {
-            double timeStamp = timeStamps[inputIndex];
-            double marginOfError = SongManager.Instance.marginOfError;
-            double audioTime = SongManager.GetAudioSourceTime() - (SongManager.Instance.inputDelayInMilliseconds / 1000.0);
+        //if (inputIndex < timeStamps.Count)
+        //{
+        //    double timeStamp = timeStamps[inputIndex];
+        //    double marginOfError = SongManager.Instance.marginOfError;
+        //    double audioTime = SongManager.GetAudioSourceTime() - (SongManager.Instance.inputDelayInMilliseconds / 1000.0);
 
-            if (Input.GetKeyDown(input))
-            {
-                if (Math.Abs(audioTime - timeStamp) < marginOfError)
-                {
-                    Hit();
-                    print($"Hit on {inputIndex} note");
-                    Destroy(notes[inputIndex].gameObject);
-                    inputIndex++;
-                }
-                else
-                {
-                    print($"Hit inaccurate on {inputIndex} note with {Math.Abs(audioTime - timeStamp)} delay");
-                }
-            }
-            if (timeStamp + marginOfError <= audioTime)
-            {
-                Miss();
-                print($"Missed {inputIndex} note");
-                inputIndex++;
-            }
-        }
+        //    if (Input.GetKeyDown(input))
+        //    {
+        //        if (Math.Abs(audioTime - timeStamp) < marginOfError)
+        //        {
+        //            Hit();
+        //            print($"Hit on {inputIndex} note");
+        //            Destroy(notes[inputIndex].gameObject);
+        //            inputIndex++;
+        //        }
+        //        else
+        //        {
+        //            print($"Hit inaccurate on {inputIndex} note with {Math.Abs(audioTime - timeStamp)} delay");
+        //        }
+        //    }
+        //    if (timeStamp + marginOfError <= audioTime)
+        //    {
+        //        Miss();
+        //        print($"Missed {inputIndex} note");
+        //        inputIndex++;
+        //    }
+        //}
 
     }
-    private void Hit()
-    {
-        ScoreManager.Hit();
-    }
-    private void Miss()
-    {
-        ScoreManager.Miss();
-    }
+    //private void Hit()
+    //{
+    //    ScoreManager.Hit();
+    //}
+    //private void Miss()
+    //{
+    //    ScoreManager.Miss();
+    //}
 }

@@ -11,7 +11,25 @@ public class Rock : MonoBehaviour
     {
         timeInstantiated = SongManager.GetAudioSourceTime();
     }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Shield")) {
+            ScoreManager.Hit();
+       
+            Destroy(gameObject);
+        }
+        else if (other.gameObject.CompareTag("Player"))
+        {
+            ScoreManager.Miss();
+            Destroy(gameObject);
 
+
+
+        }
+
+
+
+    }
     // Update is called once per frame
     void Update()
     {

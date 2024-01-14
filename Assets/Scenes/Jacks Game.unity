@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d259251b72ece465996adab74e31c1ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteRestriction: 7
+  noteRestriction: 0
   input: 32
   notePrefab: {fileID: 3184234607726971657, guid: 190c73ad0bf5b4045a7b0cdcb045558c, type: 3}
   noteSpawnY: 5.5
@@ -428,7 +428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d259251b72ece465996adab74e31c1ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteRestriction: 7
+  noteRestriction: 0
   input: 32
   notePrefab: {fileID: 3184234607726971657, guid: 190c73ad0bf5b4045a7b0cdcb045558c, type: 3}
   noteSpawnY: 0
@@ -478,7 +478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d259251b72ece465996adab74e31c1ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteRestriction: 7
+  noteRestriction: 0
   input: 32
   notePrefab: {fileID: 3184234607726971657, guid: 190c73ad0bf5b4045a7b0cdcb045558c, type: 3}
   noteSpawnY: 0
@@ -528,7 +528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d259251b72ece465996adab74e31c1ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteRestriction: 7
+  noteRestriction: 0
   input: 32
   notePrefab: {fileID: 3184234607726971657, guid: 190c73ad0bf5b4045a7b0cdcb045558c, type: 3}
   noteSpawnY: -6
@@ -559,9 +559,11 @@ GameObject:
   m_Component:
   - component: {fileID: 444355073}
   - component: {fileID: 444355072}
+  - component: {fileID: 444355075}
+  - component: {fileID: 444355074}
   m_Layer: 0
   m_Name: Circle
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -633,6 +635,68 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &444355074
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444355071}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &444355075
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444355071}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0034905076, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.22621292
 --- !u!1 &473371573
 GameObject:
   m_ObjectHideFlags: 0
@@ -662,7 +726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d259251b72ece465996adab74e31c1ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteRestriction: 7
+  noteRestriction: 0
   input: 32
   notePrefab: {fileID: 3184234607726971657, guid: 190c73ad0bf5b4045a7b0cdcb045558c, type: 3}
   noteSpawnY: -5.5
@@ -694,9 +758,10 @@ GameObject:
   - component: {fileID: 496547852}
   - component: {fileID: 496547851}
   - component: {fileID: 496547853}
+  - component: {fileID: 496547854}
   m_Layer: 0
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -797,10 +862,10 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.50321025}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -811,8 +876,35 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 1.3354734}
   m_EdgeRadius: 0
+--- !u!50 &496547854
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496547849}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &787908170
 GameObject:
   m_ObjectHideFlags: 0
@@ -1272,7 +1364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d259251b72ece465996adab74e31c1ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteRestriction: 7
+  noteRestriction: 0
   input: 32
   notePrefab: {fileID: 3184234607726971657, guid: 190c73ad0bf5b4045a7b0cdcb045558c, type: 3}
   noteSpawnY: 6
@@ -1333,8 +1425,6 @@ MonoBehaviour:
   - {fileID: 282304441}
   - {fileID: 207409950}
   songDelayInSeconds: 0
-  marginOfError: 0.1
-  inputDelayInMilliseconds: 0
   fileLocation: Test.mid
   noteTime: 1
   noteTapY: 0
@@ -1568,7 +1658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d259251b72ece465996adab74e31c1ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteRestriction: 7
+  noteRestriction: 0
   input: 32
   notePrefab: {fileID: 3184234607726971657, guid: 190c73ad0bf5b4045a7b0cdcb045558c, type: 3}
   noteSpawnY: -5.5
