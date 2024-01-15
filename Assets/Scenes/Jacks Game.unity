@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d259251b72ece465996adab74e31c1ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteRestriction: 0
+  noteRestriction: 2
   input: 32
   notePrefab: {fileID: 3184234607726971657, guid: 190c73ad0bf5b4045a7b0cdcb045558c, type: 3}
   noteSpawnY: 5.5
@@ -378,7 +378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d259251b72ece465996adab74e31c1ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteRestriction: 0
+  noteRestriction: 3
   input: 32
   notePrefab: {fileID: 3184234607726971657, guid: 190c73ad0bf5b4045a7b0cdcb045558c, type: 3}
   noteSpawnY: 5.5
@@ -428,11 +428,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d259251b72ece465996adab74e31c1ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteRestriction: 0
+  noteRestriction: 4
   input: 32
   notePrefab: {fileID: 3184234607726971657, guid: 190c73ad0bf5b4045a7b0cdcb045558c, type: 3}
   noteSpawnY: 0
-  noteSpawnX: 10
+  noteSpawnX: 11.4
   timeStamps: []
 --- !u!4 &224988512
 Transform:
@@ -478,11 +478,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d259251b72ece465996adab74e31c1ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteRestriction: 0
+  noteRestriction: 1
   input: 32
   notePrefab: {fileID: 3184234607726971657, guid: 190c73ad0bf5b4045a7b0cdcb045558c, type: 3}
   noteSpawnY: 0
-  noteSpawnX: -10
+  noteSpawnX: -11.4
   timeStamps: []
 --- !u!4 &282304442
 Transform:
@@ -528,10 +528,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d259251b72ece465996adab74e31c1ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteRestriction: 0
+  noteRestriction: 8
   input: 32
   notePrefab: {fileID: 3184234607726971657, guid: 190c73ad0bf5b4045a7b0cdcb045558c, type: 3}
-  noteSpawnY: -6
+  noteSpawnY: -11.4
   noteSpawnX: 0
   timeStamps: []
 --- !u!4 &439591295
@@ -726,7 +726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d259251b72ece465996adab74e31c1ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteRestriction: 0
+  noteRestriction: 10
   input: 32
   notePrefab: {fileID: 3184234607726971657, guid: 190c73ad0bf5b4045a7b0cdcb045558c, type: 3}
   noteSpawnY: -5.5
@@ -1364,10 +1364,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d259251b72ece465996adab74e31c1ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteRestriction: 7
+  noteRestriction: 0
   input: 32
   notePrefab: {fileID: 3184234607726971657, guid: 190c73ad0bf5b4045a7b0cdcb045558c, type: 3}
-  noteSpawnY: 6
+  noteSpawnY: 11.4
   noteSpawnX: 0
   timeStamps: []
 --- !u!4 &1330997270
@@ -1425,7 +1425,7 @@ MonoBehaviour:
   - {fileID: 282304441}
   - {fileID: 207409950}
   songDelayInSeconds: 0
-  fileLocation: Test.mid
+  fileLocation: MonaLisaMap2.mid
   noteTime: 1
   noteTapY: 0
   noteTapX: 0
@@ -1658,7 +1658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d259251b72ece465996adab74e31c1ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteRestriction: 0
+  noteRestriction: 5
   input: 32
   notePrefab: {fileID: 3184234607726971657, guid: 190c73ad0bf5b4045a7b0cdcb045558c, type: 3}
   noteSpawnY: -5.5
