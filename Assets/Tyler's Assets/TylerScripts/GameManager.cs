@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManger : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -20,5 +20,8 @@ public class GameManger : MonoBehaviour
     {
         Destroy(col.gameObject);
         NoteActuator.Combo = 0;
+        Debug.Log(NoteActuator.Combo);
     }
+
+
 }
