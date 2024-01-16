@@ -14,7 +14,11 @@ TagManager:
   - Water
   - UI
   - Note
+<<<<<<< Updated upstream
   - Shield
+=======
+  - Player
+>>>>>>> Stashed changes
   - 
   - 
   - 
@@ -48,4 +52,7 @@ TagManager:
     locked: 0
   - name: Note
     uniqueID: 2830860047
+    locked: 0
+  - name: Player
+    uniqueID: 2992390537
     locked: 0

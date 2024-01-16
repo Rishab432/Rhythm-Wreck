@@ -30,7 +30,6 @@ public class Lane : MonoBehaviour
     public List<double> timeStamps = new List<double>();
 
     int spawnIndex = 0;
-    int inputIndex = 0;
 
     // Start is called before the first frame update
     void Start()

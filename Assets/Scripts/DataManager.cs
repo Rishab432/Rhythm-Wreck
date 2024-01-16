@@ -6,6 +6,8 @@ using UnityEngine;
 using System;
 using Unity.VisualScripting;
 
+
+// data persistence code from https://pavcreations.com/data-persistence-or-how-to-save-load-game-data-in-unity/.
 public class DataManager : MonoBehaviour
 {
     [Serializable]
