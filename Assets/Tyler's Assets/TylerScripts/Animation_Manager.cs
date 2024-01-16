@@ -14,8 +14,11 @@ public class Animation_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (NoteActuator.Combo <= 1)
+        if (NoteActuator.Combo == 0)
+        {
             animator.SetBool("if_missed", true);
+            Debug.Log("ddjsdjkshkdjs");
+        }
         else
             animator.SetBool("if_missed",false);
     }

@@ -9,6 +9,9 @@ public class NoteActuator : MonoBehaviour
     private int Score;
     static public int TotalScore;
     bool active = false;
+
+    public GameObject notePre;
+
     GameObject note;
     Color old;
 
@@ -25,6 +28,8 @@ public class NoteActuator : MonoBehaviour
     {
         if (Input.GetKeyDown(key))
         {
+            Instantiate(notePre, transform);
+            Combo = 0;
             GetComponent<SpriteRenderer>().color = new Color(0,0,0);
             if(active)
             {
