@@ -7,6 +7,10 @@ public class Rock : MonoBehaviour
 
     double timeInstantiated;
     public float assignedTime;
+
+
+
+
     void Start()
     {
         timeInstantiated = SongManager.GetAudioSourceTime();
@@ -15,7 +19,8 @@ public class Rock : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Shield")) {
             ScoreManager.Hit();
-       
+
+
             Destroy(gameObject);
         }
         else if (other.gameObject.CompareTag("Player"))

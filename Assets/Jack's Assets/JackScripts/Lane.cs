@@ -18,6 +18,7 @@ public class Lane : MonoBehaviour
             return SongManager.Instance.noteTapY - (noteSpawnY - SongManager.Instance.noteTapY);
         }
     }
+
     public float noteSpawnX;
     public float noteDespawnX
     {
