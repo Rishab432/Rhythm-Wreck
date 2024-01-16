@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScoreManger : MonoBehaviour
+public class Score : MonoBehaviour
 {
     public Text ComboText;
     public Text ScoreText;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame

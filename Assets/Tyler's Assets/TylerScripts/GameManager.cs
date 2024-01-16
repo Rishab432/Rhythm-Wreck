@@ -1,19 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private int _missesInARow;
+    public float delay = 3f;
+    [SerializeField] private AudioSource _beatmapAudio;
+
     void Start()
     {
-        
+        _beatmapAudio.PlayDelayed(delay);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (_missesInARow == 10)
+        {
+            Debug.Log("dsdsadsdsds");
+            SceneManager.LoadScene("Start");
+        }
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -21,6 +28,7 @@ public class GameManager : MonoBehaviour
         Destroy(col.gameObject);
         NoteActuator.Combo = 0;
         Debug.Log(NoteActuator.Combo);
+        _missesInARow += 1;
     }
 
 
