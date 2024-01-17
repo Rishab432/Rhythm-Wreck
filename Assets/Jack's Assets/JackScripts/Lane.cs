@@ -60,7 +60,6 @@ public class Lane : MonoBehaviour
                 notes.Add(note.GetComponent<Rock>());
                 note.GetComponent<Rock>().assignedTime = (float)timeStamps[spawnIndex];
                 spawnIndex++;
-                print(notes);
             }
         }
 
