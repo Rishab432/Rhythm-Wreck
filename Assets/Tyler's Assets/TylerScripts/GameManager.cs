@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (_missesInARow == 10)
+        if (_missesInARow == 3)
         {
             Debug.Log("dsdsadsdsds");
             SceneManager.LoadScene("Start");
