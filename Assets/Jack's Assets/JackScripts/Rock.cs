@@ -7,6 +7,8 @@ public class Rock : MonoBehaviour
 
     double timeInstantiated;
     public float assignedTime;
+    public GameObject hitParticle;
+    GameObject hitInstance;
 
 
 
@@ -20,8 +22,16 @@ public class Rock : MonoBehaviour
         if (other.gameObject.CompareTag("Shield")) {
             ScoreManager.Hit();
 
+            hitInstance = Instantiate(hitParticle, transform);
+            hitInstance.GetComponent<ParticleSystem>().Play();
+
+            transform.DetachChildren();
 
             Destroy(gameObject);
+
+
+
+
         }
         else if (other.gameObject.CompareTag("Player"))
         {
@@ -38,6 +48,7 @@ public class Rock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         double timeSinceInstantiated = SongManager.GetAudioSourceTime() - timeInstantiated;
         float t = (float)(timeSinceInstantiated / (SongManager.Instance.noteTime * 2));
 

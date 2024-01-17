@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assignedTime: 0
-  ps: {fileID: 0}
+  hitParticle: {fileID: 3239523149053324725, guid: 8b66d862efccc4384a87e4314e688ff8, type: 3}
 --- !u!212 &4812791514721530789
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -130,7 +130,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
