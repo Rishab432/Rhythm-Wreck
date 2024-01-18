@@ -17,6 +17,16 @@ public class Rock : MonoBehaviour
     {
         timeInstantiated = SongManager.GetAudioSourceTime();
     }
+    public void DestroyGlow(GameObject gameObject)
+    {
+        // compare children of game object
+        for (var i = gameObject.transform.childCount - 1; i >= 0; i--)
+        {
+            // only destroy tagged object
+            if (gameObject.transform.GetChild(i).gameObject.tag == "glow")
+                Destroy(gameObject.transform.GetChild(i).gameObject);
+        }
+    }
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Shield")) {
@@ -24,6 +34,8 @@ public class Rock : MonoBehaviour
 
             hitInstance = Instantiate(hitParticle, transform);
             hitInstance.GetComponent<ParticleSystem>().Play();
+
+            DestroyGlow(gameObject);
 
             transform.DetachChildren();
 
