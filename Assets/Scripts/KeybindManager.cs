@@ -26,19 +26,16 @@ public class KeybindManager : MonoBehaviour
         {
             if (Input.anyKeyDown)
             {
-                Debug.Log("hehdaheahhahah");
                 foreach (KeyCode keyCode in Enum.GetValues(typeof(KeyCode)))
                 {
                     if (Input.GetKey(keyCode))
                     {
                         _keybinds[_setKey] = keyCode;
                         DataManager.Instance.Data.Keybinds[_setKey] = _keybinds[_setKey];
-                        Debug.Log(DataManager.Instance.Data.Keybinds[_setKey].ToString().ToUpper());
                         if (_setKey == "Up") _upBind.text = _keybinds[_setKey].ToString().ToUpper();
                         if (_setKey == "Down") _downBind.text = _keybinds[_setKey].ToString().ToUpper();
                         if (_setKey == "Left") _leftBind.text = _keybinds[_setKey].ToString().ToUpper();
                         if (_setKey == "Right") _rightBind.text = _keybinds[_setKey].ToString().ToUpper();
-                        Debug.Log("heahehaha");
                         _setKey = string.Empty;
                         break;
                     }
