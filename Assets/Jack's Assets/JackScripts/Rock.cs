@@ -7,6 +7,8 @@ public class Rock : MonoBehaviour
 
     double timeInstantiated;
     public float assignedTime;
+    public GameObject hitParticle;
+    GameObject hitInstance;
 
 
 
@@ -15,13 +17,33 @@ public class Rock : MonoBehaviour
     {
         timeInstantiated = SongManager.GetAudioSourceTime();
     }
+    public void DestroyGlow(GameObject gameObject)
+    {
+        // compare children of game object
+        for (var i = gameObject.transform.childCount - 1; i >= 0; i--)
+        {
+            // only destroy tagged object
+            if (gameObject.transform.GetChild(i).gameObject.tag == "glow")
+                Destroy(gameObject.transform.GetChild(i).gameObject);
+        }
+    }
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Shield")) {
             ScoreManager.Hit();
 
+            hitInstance = Instantiate(hitParticle, transform);
+            hitInstance.GetComponent<ParticleSystem>().Play();
+
+            DestroyGlow(gameObject);
+
+            transform.DetachChildren();
 
             Destroy(gameObject);
+
+
+
+
         }
         else if (other.gameObject.CompareTag("Player"))
         {
@@ -38,6 +60,7 @@ public class Rock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         double timeSinceInstantiated = SongManager.GetAudioSourceTime() - timeInstantiated;
         float t = (float)(timeSinceInstantiated / (SongManager.Instance.noteTime * 2));
 
