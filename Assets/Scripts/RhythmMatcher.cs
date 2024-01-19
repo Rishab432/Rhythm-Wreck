@@ -58,8 +58,4 @@ public class RhythmMatcher : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
             _iteration = 0;
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 12b11b74765f03a76060f1e36667f3d2ebf44c02
