@@ -51,10 +51,10 @@ public class NoteButtons : MonoBehaviour
 //--------------------------------------
     public void CheckValues()
     {
-        if (CheckList(RhythmMatcher.GetComponent<RhythmList>(), 0))
-            Debug.Log("CORRECT");
-        else
-            Debug.Log("LOUD INCORRECT BUZZER");
+        //if (CheckList(RhythmMatcher.GetComponent<RhythmList>(), 0))
+        //    Debug.Log("CORRECT");
+        //else
+            //Debug.Log("LOUD INCORRECT BUZZER");
     }
 //--------------------------------------
 

@@ -12,6 +12,7 @@ public class ScoreManager : MonoBehaviour
     static int comboScore;
     static int score;
 
+
     //public float sfxDelay;
     void Start()
     {
