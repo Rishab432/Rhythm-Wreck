@@ -60,12 +60,7 @@ public class NoteButtons : MonoBehaviour
     }
 //--------------------------------------
     public void CheckValues()
-    {
-        if (CheckList(RhythmMatcher.Instance.RhythmList, 0))
-            Debug.Log("CORRECT");
-        else
-            Debug.Log("LOUD INCORRECT BUZZER");
-
+    { 
         Debug.Log($"original {RhythmMatcher.Instance.RhythmList[0]}");
         Debug.Log($"original {RhythmMatcher.Instance.RhythmList[1]}");
         Debug.Log($"original {RhythmMatcher.Instance.RhythmList[2]}");
@@ -75,11 +70,12 @@ public class NoteButtons : MonoBehaviour
         Debug.Log($"input {_inputList[2]}");
         Debug.Log($"input {_inputList[3]}");
 
-        RhythmMatcher.Instance.RhythmList = new int[4] { Random.Range(1, 6), Random.Range(1, 6), Random.Range(1, 6), Random.Range(1, 6) };
-        if (CheckList(RhythmMatcher.GetComponent<RhythmList>(), 0))
+        if (CheckList(RhythmMatcher.Instance.RhythmList, 0))
             Debug.Log("CORRECT");
         else
             Debug.Log("LOUD INCORRECT BUZZER");
+
+        RhythmMatcher.Instance.RhythmList = new int[4] { Random.Range(1, 6), Random.Range(1, 6), Random.Range(1, 6), Random.Range(1, 6) };
     }
 //--------------------------------------
 
