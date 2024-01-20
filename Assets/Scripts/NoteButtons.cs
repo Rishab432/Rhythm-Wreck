@@ -76,6 +76,10 @@ public class NoteButtons : MonoBehaviour
         Debug.Log($"input {_inputList[3]}");
 
         RhythmMatcher.Instance.RhythmList = new int[4] { Random.Range(1, 6), Random.Range(1, 6), Random.Range(1, 6), Random.Range(1, 6) };
+        if (CheckList(RhythmMatcher.GetComponent<RhythmList>(), 0))
+            Debug.Log("CORRECT");
+        else
+            Debug.Log("LOUD INCORRECT BUZZER");
     }
 //--------------------------------------
 
