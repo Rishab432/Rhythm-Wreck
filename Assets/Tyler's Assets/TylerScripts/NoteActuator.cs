@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class NoteActuator : MonoBehaviour
 {
+    // y value of the start of the song y = 11.25
     public KeyCode key;
     static public int Combo;
     private int Score;
     static public int TotalScore;
     bool active = false;
+
     GameObject note;
     Color old;
 
@@ -31,9 +33,10 @@ public class NoteActuator : MonoBehaviour
                 Destroy(note);
                 Combo += 1;
                 Debug.Log(Combo);
-                Score = 97 * Combo;
+                Score = 197 * Combo;
                 TotalScore = TotalScore + Score; 
             }
+            //Combo = 0;
         }
         if (Input.GetKeyUp(key))
             GetComponent<SpriteRenderer>().color = old;

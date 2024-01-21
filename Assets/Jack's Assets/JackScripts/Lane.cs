@@ -18,6 +18,7 @@ public class Lane : MonoBehaviour
             return SongManager.Instance.noteTapY - (noteSpawnY - SongManager.Instance.noteTapY);
         }
     }
+
     public float noteSpawnX;
     public float noteDespawnX
     {
@@ -59,7 +60,6 @@ public class Lane : MonoBehaviour
                 notes.Add(note.GetComponent<Rock>());
                 note.GetComponent<Rock>().assignedTime = (float)timeStamps[spawnIndex];
                 spawnIndex++;
-                print(notes);
             }
         }
 
