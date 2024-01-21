@@ -25,7 +25,7 @@ public class ScoreManager : MonoBehaviour
         comboScore += 1;
         Instance.hitSFX.PlayDelayed(0.15f);
         score += (17 * comboScore);
-
+        ShakeBehaviour.Instance.TriggerShake();
     }
     public static void Miss()
     {
