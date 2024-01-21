@@ -15,10 +15,10 @@ public class DataManager : MonoBehaviour
     {
         //public static GameData Instance;
 
-        public string FileName1 { get; set; }
-        public string FileName2 { get; set; }
-        public string FileName3 { get; set; }
-        public string FileName4 { get; set; }
+        public string FileName1 { get; set; } = "New Game";
+        public string FileName2 { get; set; } = "New Game";
+        public string FileName3 { get; set; } = "New Game";
+        public string FileName4 { get; set; } = "New Game";
         public int Score1 { get; set; }
         public int Score2 { get; set; }
         public int Score3 { get; set; }
@@ -27,14 +27,6 @@ public class DataManager : MonoBehaviour
         public float SFXSliderVal { get; set; } = 1.00f;
         public bool BGMToggle { get; set; } = true;
         public bool SFXToggle { get; set; } = true;
-
-        public Dictionary<string, KeyCode> Keybinds = new()
-        {
-            { "Up", KeyCode.UpArrow },
-            { "Down", KeyCode.DownArrow },
-            { "Left", KeyCode.LeftArrow },
-            { "Right", KeyCode.RightArrow }
-        };
     }
 
     public static DataManager Instance;

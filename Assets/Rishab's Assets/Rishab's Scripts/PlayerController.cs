@@ -16,8 +16,7 @@ public class PlayerController : MonoBehaviour
         _animator = gameObject.GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (InTutorial)
         {
@@ -32,7 +31,7 @@ public class PlayerController : MonoBehaviour
             _animator.SetTrigger("High Swipe");
             if (!UpperAttackable)
             {
-                Debug.Log("what are you high swiping at?");
+                ScoreHolder.Instance.Score -= 5;
             }
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
@@ -42,10 +41,9 @@ public class PlayerController : MonoBehaviour
             _animator.SetTrigger("Low Swipe");
             if (!LowerAttackable)
             {
-                Debug.Log("what are you low swiping at?");
+                ScoreHolder.Instance.Score -= 5;
             }
         }
-
     }
 
     public void ResetAnim()

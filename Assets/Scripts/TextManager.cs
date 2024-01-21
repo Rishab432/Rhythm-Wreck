@@ -9,8 +9,9 @@ public class TextManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _titleText;
     [SerializeField] private TextMeshProUGUI _subtitleText;
-    private float _titleRotateSpeed = 0.5f;
+    private float _titleRotateSpeed = 0.25f;
     private float _subtitleAlphaSpeed = 0.01f;
+    private float _maxAngle = 10;
 
     void Start()
     {
@@ -20,7 +21,6 @@ public class TextManager : MonoBehaviour
         float g = _subtitleText.color.g;
         float b = _subtitleText.color.b;
         _subtitleText.color = new Color(r, g, b, 0.5f);
-        Debug.Log(_subtitleText.color.a);
     }
 
     void FixedUpdate()
@@ -29,9 +29,9 @@ public class TextManager : MonoBehaviour
         float currentAngle = _titleText.transform.eulerAngles.z;
         if (currentAngle > 180)
             currentAngle = -(180-(currentAngle % 180));
-        if (currentAngle >= 15)
+        if (currentAngle >= _maxAngle)
             _titleRotateSpeed = -_titleRotateSpeed;
-        if (currentAngle <= -15)
+        if (currentAngle <= -_maxAngle)
             _titleRotateSpeed = -_titleRotateSpeed;
 
         

@@ -7,7 +7,7 @@ public class TutorialManager : MonoBehaviour
 {
     [SerializeField] private GameObject[] _textLines;
     private int _currentLine = 0;
-    private float _waitTime = 4f;
+    private float _waitTime = 6f;
 
     void Update()
     {
@@ -32,6 +32,7 @@ public class TutorialManager : MonoBehaviour
                 PlayerController.Instance.InTutorial = false;
                 PlayerController.Instance.LowerAttackable = false;
                 PlayerController.Instance.UpperAttackable = false;
+                GameMusicManager.Instance.ReadyToPlay = true;
                 _currentLine++;
             }
         }

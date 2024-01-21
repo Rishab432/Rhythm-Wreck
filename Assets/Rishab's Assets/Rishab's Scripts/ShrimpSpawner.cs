@@ -4,38 +4,32 @@ using UnityEngine;
 
 public class ShrimpSpawner : MonoBehaviour
 {
+    public static ShrimpSpawner Instance;
     [SerializeField] private GameObject FlyingShrimp;
     [SerializeField] private GameObject SwimmingShrimp;
-    private float _spawnTime = 5f;
+    [SerializeField] private GameObject Canvas;
+    public float CurrentTimeStamp {  get; private set; }
 
     void Start()
     {
-        // hi
+        Instance = this;
     }
 
-    void Update()
+    public void SpawnFlyingShrimp(float timeStamp)
     {
-        // When beat is current call spawnflyingshrimp or spawnswimmingshrimp
-        _spawnTime -= Time.deltaTime;
-        if (_spawnTime < 0)
-        {
-            SpawnSwimmingShrimp();
-            SpawnFlyingShrimp();
-            _spawnTime = 4f;
-        }
-    }
-
-    void SpawnFlyingShrimp()
-    {
+        CurrentTimeStamp = timeStamp;
         Vector2 location = Camera.main.ViewportToWorldPoint(new Vector2(0.75f, 0.1f));
         GameObject flyingShrimp = (GameObject)Instantiate(FlyingShrimp);
+        flyingShrimp.transform.SetParent(Canvas.transform);
         flyingShrimp.transform.position = location;
     }
     
-    void SpawnSwimmingShrimp()
+    public void SpawnSwimmingShrimp(float timeStamp)
     {
+        CurrentTimeStamp = timeStamp;
         Vector2 location = Camera.main.ViewportToWorldPoint(new Vector2(1f, 0.25f));
         GameObject swimmingShrimp = (GameObject)Instantiate(SwimmingShrimp);
+        swimmingShrimp.transform.SetParent(Canvas.transform);
         swimmingShrimp.transform.position = location;
     }
 }

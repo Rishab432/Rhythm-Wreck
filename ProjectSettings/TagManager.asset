@@ -3,9 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Note
-  - Shield
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -13,12 +11,8 @@ TagManager:
   - 
   - Water
   - UI
-  - Note
-<<<<<<< Updated upstream
-  - Shield
-=======
-  - Player
->>>>>>> Stashed changes
+  - 
+  - 
   - 
   - 
   - 
@@ -46,13 +40,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: UI
-    uniqueID: 4263968091
-    locked: 0
-  - name: Note
-    uniqueID: 2830860047
-    locked: 0
-  - name: Player
-    uniqueID: 2992390537
     locked: 0
