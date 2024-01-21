@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class RhythmMatcher : MonoBehaviour
 {
+    public static RhythmMatcher Instance;
     public AudioSource Aud;
     public AudioClip Ta;
     public AudioClip Titi;
@@ -12,10 +13,7 @@ public class RhythmMatcher : MonoBehaviour
     public AudioClip TikaTi;
     public AudioClip TikaTika;
 
-    private int[] _rhythmList = new int[] { 0, 0, 0, 0 };
-    private int[] _randomList = new int[] { 0, 0, 0, 0 };
-
-    int[] temp = new int[] { 1, 3, 3, 2 };
+    public int[] RhythmList = new int[4];
 
     private float _waitTime = 3/4f;
     public int _iteration = 0;
@@ -40,7 +38,7 @@ public class RhythmMatcher : MonoBehaviour
         _waitTime -= Time.deltaTime;
         if (_waitTime < 0f && _iteration < 4)
         {
-            PlayNote(temp, _iteration);
+            PlayNote(RhythmList, _iteration);
             _waitTime = 3/4f;
             _iteration++;
         }
@@ -48,7 +46,9 @@ public class RhythmMatcher : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // hi
+        Instance = this;
+        RhythmList = new int[4] { Random.Range(1, 6), Random.Range(1, 6), Random.Range(1, 6), Random.Range(1, 6) };
+
     }
     // Update is called once per frame
     void Update()
