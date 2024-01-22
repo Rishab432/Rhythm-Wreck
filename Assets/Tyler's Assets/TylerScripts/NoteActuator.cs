@@ -36,7 +36,8 @@ public class NoteActuator : MonoBehaviour
                 Score = 197 * Combo;
                 TotalScore = TotalScore + Score; 
             }
-            //Combo = 0;
+            else
+                Combo = 0;
         }
         if (Input.GetKeyUp(key))
             GetComponent<SpriteRenderer>().color = old;
