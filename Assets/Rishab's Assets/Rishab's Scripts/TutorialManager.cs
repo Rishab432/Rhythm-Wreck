@@ -7,10 +7,17 @@ public class TutorialManager : MonoBehaviour
 {
     [SerializeField] private GameObject[] _textLines;
     private int _currentLine = 0;
-    private float _waitTime = 4f;
+    private float _waitTime = 6f;
+
+    private void Start()
+    {
+        _currentLine = 0;
+        _waitTime = 6f;
+    }
 
     void Update()
     {
+        if (PauseManager.Instance.Paused) { return; }
         for (int i = 0; i < _textLines.Length; i++)
         {
             _textLines[i].SetActive(true);
@@ -32,6 +39,7 @@ public class TutorialManager : MonoBehaviour
                 PlayerController.Instance.InTutorial = false;
                 PlayerController.Instance.LowerAttackable = false;
                 PlayerController.Instance.UpperAttackable = false;
+                GameMusicManager.Instance.ReadyToPlay = true;
                 _currentLine++;
             }
         }

@@ -5,6 +5,12 @@ using UnityEngine;
 
 public class RhythmMatcher : MonoBehaviour
 {
+
+/*
+Initializing variables 
+*/
+
+    public static RhythmMatcher Instance;
     public AudioSource Aud;
     public AudioClip Ta;
     public AudioClip Titi;
@@ -12,13 +18,17 @@ public class RhythmMatcher : MonoBehaviour
     public AudioClip TikaTi;
     public AudioClip TikaTika;
 
-    private int[] _rhythmList = new int[] { 0, 0, 0, 0 };
-    private int[] _randomList = new int[] { 0, 0, 0, 0 };
-
-    int[] temp = new int[] { 1, 3, 3, 2 };
+    public int[] RhythmList = new int[4];
 
     private float _waitTime = 3/4f;
     public int _iteration = 0;
+
+/*
+This function gets called by the play bar function to play an audio. Depending
+on what number is in the rhythm list it sets the audio clip to the number's
+respective counterpart. It then plays it after the source has been associated
+with a clip.
+*/
 
     void PlayNote(int[] list, int iteration)
     {
@@ -35,12 +45,20 @@ public class RhythmMatcher : MonoBehaviour
             Aud.clip = TikaTika;
         Aud.Play();
     }
+/*
+This function plays the sound when the user holds the space bar by waiting in
+between audios for 0.75 seconds before playing the next. It does this four times
+with an iteration variable that increases each time and stops when it reaches
+four. The iteration gets reset to zero when the user removes their finger from
+the space bar.
+*/
+
     public void PlayBar()
     {
         _waitTime -= Time.deltaTime;
         if (_waitTime < 0f && _iteration < 4)
         {
-            PlayNote(temp, _iteration);
+            PlayNote(RhythmList, _iteration);
             _waitTime = 3/4f;
             _iteration++;
         }
@@ -48,7 +66,15 @@ public class RhythmMatcher : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // hi
+/*
+Created an instance variable to get called by other classes. This is the rhythm
+list that gets randomized each time the check button is clicked. Most other
+functions depend on this one to perform their tasks correctly.
+*/
+
+        Instance = this;
+        RhythmList = new int[4] { Random.Range(1, 6), Random.Range(1, 6), Random.Range(1, 6), Random.Range(1, 6) };
+
     }
     // Update is called once per frame
     void Update()

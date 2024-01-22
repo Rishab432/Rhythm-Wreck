@@ -22,7 +22,7 @@ public class GameSelect : MonoBehaviour
 
     public void ToRishabsGame()
     {
-        SceneManager.LoadScene("Dolphin Dive");
+        SceneManager.LoadScene("Shrimp Swiper");
     }
 
     public void ToUselessShop()

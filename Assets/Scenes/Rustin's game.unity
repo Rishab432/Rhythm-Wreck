@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Kiwi
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -314,7 +314,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Watermelon
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -404,7 +404,7 @@ GameObject:
   - component: {fileID: 109736366}
   - component: {fileID: 109736365}
   m_Layer: 5
-  m_Name: Note 4
+  m_Name: Note 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -473,7 +473,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 109736366}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1617297578}
+        m_TargetAssemblyTypeName: NoteButtons, Assembly-CSharp
+        m_MethodName: SetIndexValueOne
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &109736366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -525,7 +537,7 @@ GameObject:
   - component: {fileID: 256620490}
   - component: {fileID: 256620489}
   m_Layer: 5
-  m_Name: Note 2
+  m_Name: Note 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -594,7 +606,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 256620490}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1617297578}
+        m_TargetAssemblyTypeName: NoteButtons, Assembly-CSharp
+        m_MethodName: SetIndexValueThree
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &256620490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -824,7 +848,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pineapple
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -914,7 +938,7 @@ GameObject:
   - component: {fileID: 387492712}
   - component: {fileID: 387492711}
   m_Layer: 5
-  m_Name: Note 1
+  m_Name: Note 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -983,7 +1007,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 387492712}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1617297578}
+        m_TargetAssemblyTypeName: NoteButtons, Assembly-CSharp
+        m_MethodName: SetIndexValueFour
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &387492712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1059,7 +1095,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -150, y: -100}
-  m_SizeDelta: {x: 140, y: 40}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &415133882
 MonoBehaviour:
@@ -1104,7 +1140,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 415133883}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1617297578}
+        m_TargetAssemblyTypeName: NoteButtons, Assembly-CSharp
+        m_MethodName: SetValueToTiti
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &415133883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1125,8 +1173,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 37071d4b2ed7a4b79bc0601bcd9055f9, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1350,7 +1398,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 150, y: -100}
-  m_SizeDelta: {x: 140, y: 40}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &764847928
 MonoBehaviour:
@@ -1395,7 +1443,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 764847929}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1617297578}
+        m_TargetAssemblyTypeName: NoteButtons, Assembly-CSharp
+        m_MethodName: SetValueToTikaTi
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &764847929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1416,8 +1476,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 9a3a0f6632fdd40829f111fd8f2c2e91, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1562,6 +1622,134 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &848250910
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 848250912}
+  - component: {fileID: 848250911}
+  m_Layer: 0
+  m_Name: Audio Source (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &848250911
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848250910}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &848250912
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848250910}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 395.7693, y: 214.35211, z: 0.34716797}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &910346029
 GameObject:
   m_ObjectHideFlags: 0
@@ -1575,7 +1763,7 @@ GameObject:
   - component: {fileID: 910346032}
   - component: {fileID: 910346031}
   m_Layer: 5
-  m_Name: Note 3
+  m_Name: Note 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1644,7 +1832,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 910346032}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1617297578}
+        m_TargetAssemblyTypeName: NoteButtons, Assembly-CSharp
+        m_MethodName: SetIndexValueTwo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &910346032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1740,7 +1940,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Button 4
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1854,7 +2054,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -100}
-  m_SizeDelta: {x: 140, y: 40}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1150021203
 MonoBehaviour:
@@ -1900,13 +2100,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1617297578}
+        m_TargetAssemblyTypeName: NoteButtons, Assembly-CSharp
+        m_MethodName: SetValueToTiTika
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1932,8 +2132,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: eeac607b52b5442d28adb7045f6ca083, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2007,7 +2207,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Grape
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2141,7 +2341,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Button 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2255,7 +2455,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 300, y: -100}
-  m_SizeDelta: {x: 140, y: 40}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1403054284
 MonoBehaviour:
@@ -2300,7 +2500,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1403054285}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1617297578}
+        m_TargetAssemblyTypeName: NoteButtons, Assembly-CSharp
+        m_MethodName: SetValueToTikaTika
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1403054285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2321,8 +2533,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 028f2954aeb2e44579e5768f7a024dbe, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2396,7 +2608,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Button 3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2509,8 +2721,8 @@ Camera:
   m_GameObject: {fileID: 1530342725}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.972549, g: 0.83137256, b: 0.34509805, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -2647,7 +2859,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -300, y: -100}
-  m_SizeDelta: {x: 140, y: 40}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1588153865
 MonoBehaviour:
@@ -2693,13 +2905,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1617297576}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1617297578}
+        m_TargetAssemblyTypeName: NoteButtons, Assembly-CSharp
+        m_MethodName: SetValueToTa
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2725,8 +2937,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 25c64e91d4e1345ffaebfd4d8bade3cc, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2778,10 +2990,10 @@ RectTransform:
   - {fileID: 1150021202}
   - {fileID: 764847927}
   - {fileID: 1403054283}
-  - {fileID: 387492710}
-  - {fileID: 256620488}
-  - {fileID: 910346030}
   - {fileID: 109736364}
+  - {fileID: 910346030}
+  - {fileID: 256620488}
+  - {fileID: 387492710}
   m_Father: {fileID: 422378461}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -2801,6 +3013,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e793d302693e4401872c203dbe8cda6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Value: 0
+  Aud: {fileID: 848250911}
+  Correct: {fileID: 8300000, guid: ad0e42a2c69244347b3ec60a86757fff, type: 3}
+  Incorrect: {fileID: 8300000, guid: 32dc50355aa3047b4b3d4707ddc859d1, type: 3}
 --- !u!1 &1949021141
 GameObject:
   m_ObjectHideFlags: 0
@@ -2810,7 +3026,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1949021143}
-  - component: {fileID: 1949021142}
+  - component: {fileID: 1949021144}
   m_Layer: 0
   m_Name: Main
   m_TagString: Untagged
@@ -2818,25 +3034,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1949021142
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1949021141}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73f1e6c82c31c49109716d97745b5181, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Aud: {fileID: 818349331}
-  Ta: {fileID: 8300000, guid: 3bc822b2993a14600b6cf75eee272a0a, type: 3}
-  Titi: {fileID: 8300000, guid: 61d0813671bc64998ad62720f966d3b8, type: 3}
-  TiTika: {fileID: 8300000, guid: 73566c2225f174fcc9058e19eadddf9e, type: 3}
-  TikaTi: {fileID: 8300000, guid: 21250f8ffa43047499b2c5608a42e65c, type: 3}
-  TikaTika: {fileID: 8300000, guid: f5fe78f14d78847b4839a4a22de8c846, type: 3}
-  _iteration: 0
 --- !u!4 &1949021143
 Transform:
   m_ObjectHideFlags: 0
@@ -2852,6 +3049,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1949021144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949021141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83443d06c1af54818a634515d5c9021a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Aud: {fileID: 818349331}
+  Ta: {fileID: 8300000, guid: 3bc822b2993a14600b6cf75eee272a0a, type: 3}
+  Titi: {fileID: 8300000, guid: 61d0813671bc64998ad62720f966d3b8, type: 3}
+  TiTika: {fileID: 8300000, guid: 73566c2225f174fcc9058e19eadddf9e, type: 3}
+  TikaTi: {fileID: 8300000, guid: 21250f8ffa43047499b2c5608a42e65c, type: 3}
+  TikaTika: {fileID: 8300000, guid: f5fe78f14d78847b4839a4a22de8c846, type: 3}
+  RhythmList: 00000000000000000000000000000000
+  _iteration: 0
 --- !u!1 &1985170567
 GameObject:
   m_ObjectHideFlags: 0
@@ -2909,7 +3126,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Button 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2998,7 +3215,6 @@ GameObject:
   - component: {fileID: 2079983956}
   - component: {fileID: 2079983955}
   - component: {fileID: 2079983954}
-  - component: {fileID: 2079983953}
   m_Layer: 5
   m_Name: Check Button
   m_TagString: Untagged
@@ -3026,18 +3242,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -20}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2079983953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2079983951}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e793d302693e4401872c203dbe8cda6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2079983954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3081,7 +3285,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2079983955}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1617297578}
+        m_TargetAssemblyTypeName: NoteButtons, Assembly-CSharp
+        m_MethodName: CheckValues
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2079983955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3177,7 +3393,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Coconut
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3260,6 +3476,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1530342728}
   - {fileID: 818349332}
+  - {fileID: 848250912}
   - {fileID: 1949021143}
   - {fileID: 422378461}
   - {fileID: 699200723}

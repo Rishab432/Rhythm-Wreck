@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO.Enumeration;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -17,6 +18,10 @@ public class FileSelect : MonoBehaviour
     void Start()
     {
         _inputField.SetActive(false);
+        _fileName1.text = DataManager.Instance.Data.FileName1;
+        _fileName2.text = DataManager.Instance.Data.FileName2;
+        _fileName3.text = DataManager.Instance.Data.FileName3;
+        _fileName4.text = DataManager.Instance.Data.FileName4;
     }
 
     public void SetFileName(int fileNumber)
@@ -52,19 +57,21 @@ public class FileSelect : MonoBehaviour
                 _inputField.SetActive(false);
                 // _settingsButton.SetActive(true); _fileButton1.SetActive(true); _fileButton2.SetActive(true); _fileButton3.SetActive(true); _fileButton4.SetActive(true);
                 _titleText.text = "Select A File";
+                DataManager.Instance.SaveData();
+                _inputName.onEndEdit.RemoveAllListeners();
+                SceneManager.LoadScene("GameSelect");
             }
             else
             {
                 Debug.LogError("A proper name has not been set for the file.");
             }
-            _inputName.onEndEdit.RemoveAllListeners();
-            SceneManager.LoadScene("GameSelect");
         });
     }
 
     public void FirstFileSelect()
     {
-        if (string.IsNullOrWhiteSpace(DataManager.Instance.Data.FileName1))
+        FileManager.Instance.SetCurrentFile(0);
+        if (string.IsNullOrWhiteSpace(DataManager.Instance.Data.FileName1) || DataManager.Instance.Data.FileName1 == "New Game")
             SetFileName(1);
         else
             SceneManager.LoadScene("GameSelect");
@@ -72,7 +79,8 @@ public class FileSelect : MonoBehaviour
 
     public void SecondFileSelect()
     {
-        if (string.IsNullOrWhiteSpace(DataManager.Instance.Data.FileName2))
+        FileManager.Instance.SetCurrentFile(1);
+        if (string.IsNullOrWhiteSpace(DataManager.Instance.Data.FileName2) || DataManager.Instance.Data.FileName2 == "New Game")
             SetFileName(2);
         else
             SceneManager.LoadScene("GameSelect");
@@ -80,7 +88,8 @@ public class FileSelect : MonoBehaviour
 
     public void ThirdFileSelect()
     {
-        if (string.IsNullOrWhiteSpace(DataManager.Instance.Data.FileName3))
+        FileManager.Instance.SetCurrentFile(2);
+        if (string.IsNullOrWhiteSpace(DataManager.Instance.Data.FileName3) || DataManager.Instance.Data.FileName3 == "New Game")
             SetFileName(3);
         else
             SceneManager.LoadScene("GameSelect");
@@ -88,7 +97,8 @@ public class FileSelect : MonoBehaviour
 
     public void FourthFileSelect()
     {
-        if (string.IsNullOrWhiteSpace(DataManager.Instance.Data.FileName4))
+        FileManager.Instance.SetCurrentFile(3);
+        if (string.IsNullOrWhiteSpace(DataManager.Instance.Data.FileName4) || DataManager.Instance.Data.FileName4 == "New Game")
             SetFileName(4);
         else
             SceneManager.LoadScene("GameSelect");

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class Rock : MonoBehaviour
 {
@@ -75,6 +76,9 @@ public class Rock : MonoBehaviour
             transform.localPosition = Vector3.Lerp(new Vector3(parentGameObject.GetComponent<Lane>().noteSpawnX, parentGameObject.GetComponent<Lane>().noteSpawnY,0f), new Vector3(parentGameObject.GetComponent<Lane>().noteDespawnX, parentGameObject.GetComponent<Lane>().noteDespawnY, 0f), t);
 
             GetComponent<SpriteRenderer>().enabled = true;
+            GetComponent<BoxCollider2D>().enabled = true;
+            GetComponentInChildren<Light2D>().enabled = true;
+
         }
     }
 }

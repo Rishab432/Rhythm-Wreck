@@ -6,24 +6,48 @@ public class PlayerController : MonoBehaviour
 {
     public static PlayerController Instance;
     private Animator _animator;
+    private SpriteRenderer[] _spriteRenderers;
     public bool LowerAttackable {  get; set; } = false;
     public bool UpperAttackable { get; set; } = false;
     public bool InTutorial { get; set; } = true;
+    public bool Guiders { get; set; } = false;
 
     void Start()
     {
         Instance = this;
         _animator = gameObject.GetComponent<Animator>();
+        _spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
+        LowerAttackable = false;
+        UpperAttackable = false;
+        InTutorial = true;
+        Guiders = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
+        if (PauseManager.Instance.Paused)
+        {
+            foreach (SpriteRenderer spriteRenderer in _spriteRenderers)
+            {
+                if (!spriteRenderer.enabled) break;
+                spriteRenderer.enabled = false;
+            }
+            return;
+        }
+        else
+        {
+            foreach (SpriteRenderer spriteRenderer in _spriteRenderers)
+            {
+                if (spriteRenderer.enabled) break;
+                spriteRenderer.enabled = true;
+            }
+        }
         if (InTutorial)
         {
             LowerAttackable = true;
             UpperAttackable = true;
         }
+
         // From https://forum.unity.com/threads/start-animation-on-mouse-click.442023/ for animation setup.
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
@@ -32,7 +56,7 @@ public class PlayerController : MonoBehaviour
             _animator.SetTrigger("High Swipe");
             if (!UpperAttackable)
             {
-                Debug.Log("what are you high swiping at?");
+                ScoreHolder.Instance.Score -= 5;
             }
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
@@ -42,10 +66,9 @@ public class PlayerController : MonoBehaviour
             _animator.SetTrigger("Low Swipe");
             if (!LowerAttackable)
             {
-                Debug.Log("what are you low swiping at?");
+                ScoreHolder.Instance.Score -= 5;
             }
         }
-
     }
 
     public void ResetAnim()
