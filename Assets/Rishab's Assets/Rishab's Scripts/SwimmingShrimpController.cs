@@ -9,11 +9,13 @@ public class SwimmingShrimpController : MonoBehaviour
 
     private float _tempoX;
     private float _initialSpeed;
+    private float _timeStamp;
 
     void Start()
     {
-        _tempoX = 120f / 60f;
+        _tempoX = 240f / 60f;
         _initialSpeed = _tempoX;
+        _timeStamp = ShrimpSpawner.Instance.CurrentTimeStamp;
     }
 
     // Update is called once per frame
@@ -26,13 +28,13 @@ public class SwimmingShrimpController : MonoBehaviour
         if (transform.position.x < -3f)
             Destroy(gameObject);
 
-        if (959f < transform.position.x && transform.position.x < 961f)
+        if (_timeStamp - 0.1f <= GameMusicManager.Instance.Audio.time && GameMusicManager.Instance.Audio.time <= _timeStamp + 0.2f)
         {
             PlayerController.Instance.LowerAttackable = true;
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
+                ScoreHolder.Instance.Score += 10;
                 Destroy(gameObject);
-                Debug.Log("nice swipe!");
                 PlayerController.Instance.LowerAttackable = false;
             }
         }

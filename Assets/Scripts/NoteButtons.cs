@@ -106,10 +106,10 @@ default state regardless of if the player gets the answer correct.
         _inputList = new int[4];
     }
 
-/*
-This function recursively iterates through the input and rhythm lists to check 
-if all values are equal. If they are, it returns the value true.
-*/
+    /*
+    This function recursively iterates through the input and rhythm lists to check 
+    if all values are equal. If they are, it returns the value true.
+    */
     public bool CheckList(int[] list, int num)
     {
         if (list[num] == _inputList[num])
@@ -119,18 +119,15 @@ if all values are equal. If they are, it returns the value true.
             return true;
         }
         return false;
-
     }
 
-    // Start is called before the first frame update
     void Start()
     {
 
     }
-
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

@@ -6,15 +6,16 @@ using UnityEngine;
 public class FlyingShrimpController : MonoBehaviour
 {
     private float _tempoX;
-    public float JumpHeight = 400f;
+    private float _jumpHeight = 400f;
     private Rigidbody2D _rb;
-    public float Peak = 5f;
+    private float _timeStamp;
 
     void Start()
     {
         _tempoX = 120f / 60f;
         _rb = GetComponent<Rigidbody2D>();
-        _rb.AddForce(new Vector2(0f, JumpHeight));
+        _rb.AddForce(new Vector2(0f, _jumpHeight));
+        _timeStamp = ShrimpSpawner.Instance.CurrentTimeStamp;
     }
 
     // Update is called once per frame
@@ -23,13 +24,14 @@ public class FlyingShrimpController : MonoBehaviour
         Vector2 position = transform.position;
         position = new Vector2(position.x - _tempoX * Time.deltaTime, position.y);
         transform.position = position;
-        if (959 < transform.position.x && transform.position.x < 961)
+
+        if (_timeStamp - 0.1f <= GameMusicManager.Instance.Audio.time && GameMusicManager.Instance.Audio.time <= _timeStamp + 0.2f)
         {
             PlayerController.Instance.UpperAttackable = true;
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
+                ScoreHolder.Instance.Score += 10;
                 Destroy(gameObject);
-                Debug.Log("nice swipe!");
                 PlayerController.Instance.UpperAttackable = false;
             }
         }

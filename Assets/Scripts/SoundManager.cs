@@ -10,10 +10,9 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
 
-    [SerializeField] private AudioSource _bgmSource, _sfxSource;
+    [SerializeField] private AudioSource _bgmSource = null, _sfxSource = null;
     [SerializeField] private AudioClip[] _audios;
-    [SerializeField] private AudioClip _sfxClip;
-    [SerializeField] private AudioMixer _mixer;
+    [SerializeField] public AudioClip _sfxClip { get; set; }
 
     void Awake()
     {
@@ -36,6 +35,9 @@ public class SoundManager : MonoBehaviour
         if (scene.name == "Start" || scene.name == "FileSelect") newClip = _audios[0];
         if (scene.name == "Settings") newClip = _audios[1];
 
+        if (scene.name == "Jacks Game" || scene.name == "Tyler Wen Game" || scene.name == "Shrimp Swiper") _bgmSource.Pause();
+        else if (!_bgmSource.isPlaying) _bgmSource.UnPause();
+
         if (newClip != _bgmSource.clip && newClip != null)
         {
             _bgmSource.enabled = false;
@@ -44,12 +46,30 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    public void Pause()
+    {
+        _bgmSource.Pause();
+    }
+
+    public void UnPause()
+    {
+        _bgmSource.UnPause();
+    }
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Return))
         {
+            _sfxSource.clip = _sfxClip;
             _sfxSource.PlayOneShot(_sfxSource.clip);
         }
+    }
+
+    public void PlaySFX(AudioClip audioClip)
+    {
+        _sfxSource.clip = audioClip;
+        _sfxSource.PlayOneShot(audioClip);
+        _sfxSource.clip = null;
     }
 
     public void ChangeBGMVolume(float value)
