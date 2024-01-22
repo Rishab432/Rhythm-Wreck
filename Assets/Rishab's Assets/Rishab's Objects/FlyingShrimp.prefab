@@ -80,8 +80,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ae88538672e4534bba5420777e84caf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpHeight: 410
-  Peak: 12.27
 --- !u!50 &5359736347484382549
 Rigidbody2D:
   serializedVersion: 4

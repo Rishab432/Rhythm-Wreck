@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO.Enumeration;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -25,7 +26,6 @@ public class FileSelect : MonoBehaviour
 
     public void SetFileName(int fileNumber)
     {
-        Debug.Log("called");
         _titleText.text = "Enter A File Name";
         _settingsButton.SetActive(false); _fileButton1.SetActive(false); _fileButton2.SetActive(false); _fileButton3.SetActive(false); _fileButton4.SetActive(false);
         _inputField.SetActive(true);
@@ -70,6 +70,7 @@ public class FileSelect : MonoBehaviour
 
     public void FirstFileSelect()
     {
+        FileManager.Instance.SetCurrentFile(0);
         if (string.IsNullOrWhiteSpace(DataManager.Instance.Data.FileName1) || DataManager.Instance.Data.FileName1 == "New Game")
             SetFileName(1);
         else
@@ -78,6 +79,7 @@ public class FileSelect : MonoBehaviour
 
     public void SecondFileSelect()
     {
+        FileManager.Instance.SetCurrentFile(1);
         if (string.IsNullOrWhiteSpace(DataManager.Instance.Data.FileName2) || DataManager.Instance.Data.FileName2 == "New Game")
             SetFileName(2);
         else
@@ -86,6 +88,7 @@ public class FileSelect : MonoBehaviour
 
     public void ThirdFileSelect()
     {
+        FileManager.Instance.SetCurrentFile(2);
         if (string.IsNullOrWhiteSpace(DataManager.Instance.Data.FileName3) || DataManager.Instance.Data.FileName3 == "New Game")
             SetFileName(3);
         else
@@ -94,6 +97,7 @@ public class FileSelect : MonoBehaviour
 
     public void FourthFileSelect()
     {
+        FileManager.Instance.SetCurrentFile(3);
         if (string.IsNullOrWhiteSpace(DataManager.Instance.Data.FileName4) || DataManager.Instance.Data.FileName4 == "New Game")
             SetFileName(4);
         else

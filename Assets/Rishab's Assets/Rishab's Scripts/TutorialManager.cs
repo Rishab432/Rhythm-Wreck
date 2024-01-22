@@ -11,6 +11,7 @@ public class TutorialManager : MonoBehaviour
 
     void Update()
     {
+        if (PauseManager.Instance.Paused) { return; }
         for (int i = 0; i < _textLines.Length; i++)
         {
             _textLines[i].SetActive(true);

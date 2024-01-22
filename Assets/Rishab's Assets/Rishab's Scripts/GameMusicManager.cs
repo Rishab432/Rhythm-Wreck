@@ -51,6 +51,12 @@ public class GameMusicManager : MonoBehaviour
 
     void Update()
     {
+        if (PauseManager.Instance.Paused)
+        {
+            Audio.Pause();
+            return;
+        }
+
         if (ReadyToPlay)
         {
             Audio.UnPause();
