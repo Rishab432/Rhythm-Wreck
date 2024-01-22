@@ -5,6 +5,11 @@ using UnityEngine;
 
 public class RhythmMatcher : MonoBehaviour
 {
+
+/*
+Initializing variables 
+*/
+
     public static RhythmMatcher Instance;
     public AudioSource Aud;
     public AudioClip Ta;
@@ -17,6 +22,13 @@ public class RhythmMatcher : MonoBehaviour
 
     private float _waitTime = 3/4f;
     public int _iteration = 0;
+
+/*
+This function gets called by the play bar function to play an audio. Depending
+on what number is in the rhythm list it sets the audio clip to the number's
+respective counterpart. It then plays it after the source has been associated
+with a clip.
+*/
 
     void PlayNote(int[] list, int iteration)
     {
@@ -33,6 +45,14 @@ public class RhythmMatcher : MonoBehaviour
             Aud.clip = TikaTika;
         Aud.Play();
     }
+/*
+This function plays the sound when the user holds the space bar by waiting in
+between audios for 0.75 seconds before playing the next. It does this four times
+with an iteration variable that increases each time and stops when it reaches
+four. The iteration gets reset to zero when the user removes their finger from
+the space bar.
+*/
+
     public void PlayBar()
     {
         _waitTime -= Time.deltaTime;
@@ -46,6 +66,12 @@ public class RhythmMatcher : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+/*
+Created an instance variable to get called by other classes. This is the rhythm
+list that gets randomized each time the check button is clicked. Most other
+functions depend on this one to perform their tasks correctly.
+*/
+
         Instance = this;
         RhythmList = new int[4] { Random.Range(1, 6), Random.Range(1, 6), Random.Range(1, 6), Random.Range(1, 6) };
 

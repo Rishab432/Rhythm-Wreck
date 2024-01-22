@@ -7,7 +7,7 @@ public class ShakeBehaviour : MonoBehaviour
     public static ShakeBehaviour Instance;
 
     // Transform of the GameObject you want to shake
-    private Transform transform;
+    private Transform move;
 
     // Desired duration of the shake effect
     private float shakeDuration = 0f;
@@ -28,18 +28,18 @@ public class ShakeBehaviour : MonoBehaviour
 
     void Awake()
     {
-        if (transform == null)
+        if (move == null)
         {
-            transform = GetComponent(typeof(Transform)) as Transform;
+            move = GetComponent(typeof(Transform)) as Transform;
         }
     }
     void OnEnable()
     {
-        initialPosition = transform.localPosition;
+        initialPosition = move.localPosition;
     }
     public void TriggerShake()
     {
-        shakeDuration = 2.0f;
+        shakeDuration = 2f;
     }
 
     // Update is called once per frame
@@ -47,14 +47,14 @@ public class ShakeBehaviour : MonoBehaviour
     {
         if (shakeDuration > 0)
         {
-            transform.localPosition = initialPosition + Random.insideUnitSphere * shakeMagnitude;
+            move.localPosition = initialPosition + Random.insideUnitSphere * shakeMagnitude;
 
             shakeDuration -= Time.deltaTime * dampingSpeed;
         }
         else
         {
             shakeDuration = 0f;
-            transform.localPosition = initialPosition;
+            move.localPosition = initialPosition;
         }
     }
 }
