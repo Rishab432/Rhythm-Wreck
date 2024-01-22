@@ -14,7 +14,7 @@ public class FlyingShrimpController : MonoBehaviour
     void Start()
     {
         _spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
-        _tempoX = 120f / 60f;
+        _tempoX = 2f;
         _rb = GetComponent<Rigidbody2D>();
         _rb.AddForce(new Vector2(0f, _jumpHeight));
         _timeStamp = ShrimpSpawner.Instance.CurrentTimeStamp;

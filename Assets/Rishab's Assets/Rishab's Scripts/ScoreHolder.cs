@@ -20,6 +20,10 @@ public class ScoreHolder : MonoBehaviour
     void Start()
     {
         Instance = this;
+        ShowResults = false;
+        _waitTime = 0.5f;
+        _done = false;
+        _returnTime = 5f;
     }
 
     void Update()

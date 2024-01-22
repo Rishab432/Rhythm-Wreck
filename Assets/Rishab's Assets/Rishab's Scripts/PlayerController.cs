@@ -17,6 +17,10 @@ public class PlayerController : MonoBehaviour
         Instance = this;
         _animator = gameObject.GetComponent<Animator>();
         _spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
+        LowerAttackable = false;
+        UpperAttackable = false;
+        InTutorial = true;
+        Guiders = false;
     }
 
     void Update()
