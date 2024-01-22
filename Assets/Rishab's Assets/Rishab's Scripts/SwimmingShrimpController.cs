@@ -51,7 +51,7 @@ public class SwimmingShrimpController : MonoBehaviour
         {
             foreach (SpriteRenderer renderer in _spriteRenderers)
             {
-                renderer.color = Color.yellow;
+                renderer.color = Color.red;
             }
         }
         if (_timeStamp - 0.1f <= GameMusicManager.Instance.Audio.time && GameMusicManager.Instance.Audio.time <= _timeStamp + 0.2f)
