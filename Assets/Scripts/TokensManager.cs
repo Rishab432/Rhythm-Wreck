@@ -10,7 +10,7 @@ public class TokensManager : MonoBehaviour
 
     private void Start()
     {
-        _tokens.text = $"Tokens: {FileManager.Instance.Tokens}";
+        _tokens.text = $"Tokens: ^{FileManager.Instance.Tokens}";
         if (_highScores != null)
         {
             for (int i = 0; i < _highScores.Length; i++)

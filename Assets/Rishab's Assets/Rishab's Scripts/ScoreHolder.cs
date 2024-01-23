@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.Common;
 using TMPro;
 using UnityEditor.SearchService;
 using UnityEngine;
@@ -35,6 +36,7 @@ public class ScoreHolder : MonoBehaviour
             _waitTime -= Time.deltaTime;
             if (_waitTime < 0 && !_done)
             {
+                Debug.Log("hello");
                 _scoreText.transform.localPosition = Vector3.zero;
                 if (Score < 955)
                 {

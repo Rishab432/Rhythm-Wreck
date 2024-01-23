@@ -23,9 +23,13 @@ public class DataManager : MonoBehaviour
             { 0, 0, 0, 0 }, // Jacks scores
             { 0, 0, 0, 0 }, // Tylers scores
             { 0, 0, 0, 0 }, // Rustins scores
-            { 0, 0, 0, 0 } // Rishabs scores
-        };
+            { 0, 0, 0, 0 } }; // Rishabs scores
         public int[] Tokens {  get; set; } = new int[] { 0, 0, 0, 0 };
+        public List<Dictionary<string, bool>> AllCollectibles = new() {
+            new Dictionary<string, bool>() { { "Cococup", false } },
+            new Dictionary<string, bool>() { { "Cococup", false } },
+            new Dictionary<string, bool>() { { "Cococup", false } },
+            new Dictionary<string, bool>() { { "Cococup", false } } }; // where collectibles across all files are stored, add collectibles to each dict.
         public float BGMSliderVal { get; set; } = 1.00f;
         public float SFXSliderVal { get; set; } = 1.00f;
         public bool BGMToggle { get; set; } = true;
