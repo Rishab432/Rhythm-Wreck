@@ -7,7 +7,7 @@ public class GameSelect : MonoBehaviour
 {
     public void ToJacksGame()
     {
-        SceneManager.LoadScene("Jacks Game");
+        SceneManager.LoadScene("Jack Song Select");
     }
 
     public void ToTylersGame()

@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Useless Shop.unity
     guid: ebd922d3f2ec6834cb145211b93ad95f
+  - enabled: 1
+    path: Assets/Scenes/Jack Song Select.unity
+    guid: 498582d1c2a6649a788818b644d4da81
   m_configObjects: {}
