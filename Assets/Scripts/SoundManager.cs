@@ -36,7 +36,7 @@ public class SoundManager : MonoBehaviour
         if (scene.name == "Settings") newClip = _audios[1];
         if (scene.name == "Useless Shop") newClip = _audios[2];
 
-        if (scene.name == "Jacks Game" || scene.name == "Tyler Wen Game" || scene.name == "Shrimp Swiper") _bgmSource.Pause();
+        if (scene.name == "Jacks Game" || scene.name == "Jack Song Select" || scene.name == "Tyler Wen Game" || scene.name == "Shrimp Swiper") _bgmSource.Pause();
         else if (!_bgmSource.isPlaying) _bgmSource.UnPause();
 
         if (newClip != _bgmSource.clip && newClip != null)
