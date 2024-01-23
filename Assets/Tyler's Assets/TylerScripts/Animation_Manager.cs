@@ -18,7 +18,6 @@ public class Animation_Manager : MonoBehaviour
         {
             animator.PlayInFixedTime("ClipName", 1, 0.0f);
             animator.SetBool("if_missed", true);
-            Debug.Log("ddjsdjkshkdjs");
         }
         else
             animator.SetBool("if_missed",false);
