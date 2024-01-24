@@ -10,10 +10,12 @@ public class SwimmingShrimpController : MonoBehaviour
     private float _tempoX;
     private float _initialSpeed;
     private float _timeStamp;
+    private SpriteRenderer[] _spriteRenderers;
 
     void Start()
     {
-        _tempoX = 240f / 60f;
+        _spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
+        _tempoX = 4f;
         _initialSpeed = _tempoX;
         _timeStamp = ShrimpSpawner.Instance.CurrentTimeStamp;
     }
@@ -21,6 +23,23 @@ public class SwimmingShrimpController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PauseManager.Instance.Paused)
+        {
+            foreach (SpriteRenderer spriteRenderer in _spriteRenderers)
+            {
+                if (!spriteRenderer.enabled) break;
+                spriteRenderer.enabled = false;
+            }
+        }
+        else
+        {
+            foreach (SpriteRenderer spriteRenderer in _spriteRenderers)
+            {
+                if (spriteRenderer.enabled) break;
+                spriteRenderer.enabled = true;
+            }
+        }
+
         Vector2 position = transform.position;
         position = new Vector2(position.x - _tempoX * Time.deltaTime, position.y);
         transform.position = position;
@@ -28,6 +47,13 @@ public class SwimmingShrimpController : MonoBehaviour
         if (transform.position.x < -3f)
             Destroy(gameObject);
 
+        if (PlayerController.Instance.Guiders && _timeStamp - 0.2f <= GameMusicManager.Instance.Audio.time)
+        {
+            foreach (SpriteRenderer renderer in _spriteRenderers)
+            {
+                renderer.color = Color.red;
+            }
+        }
         if (_timeStamp - 0.1f <= GameMusicManager.Instance.Audio.time && GameMusicManager.Instance.Audio.time <= _timeStamp + 0.2f)
         {
             PlayerController.Instance.LowerAttackable = true;
@@ -38,7 +64,14 @@ public class SwimmingShrimpController : MonoBehaviour
                 PlayerController.Instance.LowerAttackable = false;
             }
         }
-        if (transform.position.x < 959f) _tempoX = _initialSpeed * 2;
+        if (GameMusicManager.Instance.Audio.time > _timeStamp + 0.2f)
+        {
+            _tempoX = _initialSpeed * 2;
+            foreach (SpriteRenderer renderer in _spriteRenderers)
+            {
+                renderer.color = Color.white;
+            }
+        }
         if (transform.position.x < 945) Destroy(gameObject);
     }
 }

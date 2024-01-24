@@ -19,10 +19,17 @@ public class DataManager : MonoBehaviour
         public string FileName2 { get; set; } = "New Game";
         public string FileName3 { get; set; } = "New Game";
         public string FileName4 { get; set; } = "New Game";
-        public int Score1 { get; set; }
-        public int Score2 { get; set; }
-        public int Score3 { get; set; }
-        public int Score4 { get; set; }
+        public int[,] HighScores { get; set; } = new int[,] {
+            { 0, 0, 0, 0 }, // Jacks scores
+            { 0, 0, 0, 0 }, // Tylers scores
+            { 0, 0, 0, 0 }, // Rustins scores
+            { 0, 0, 0, 0 } }; // Rishabs scores
+        public int[] Tokens {  get; set; } = new int[] { 0, 0, 0, 0 };
+        public List<Dictionary<string, bool>> AllCollectibles = new() {
+            new Dictionary<string, bool>() { { "Cococup", false } },
+            new Dictionary<string, bool>() { { "Cococup", false } },
+            new Dictionary<string, bool>() { { "Cococup", false } },
+            new Dictionary<string, bool>() { { "Cococup", false } } }; // where collectibles across all files are stored, add collectibles to each dict.
         public float BGMSliderVal { get; set; } = 1.00f;
         public float SFXSliderVal { get; set; } = 1.00f;
         public bool BGMToggle { get; set; } = true;

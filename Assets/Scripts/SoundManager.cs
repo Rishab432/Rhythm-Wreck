@@ -12,7 +12,7 @@ public class SoundManager : MonoBehaviour
 
     [SerializeField] private AudioSource _bgmSource = null, _sfxSource = null;
     [SerializeField] private AudioClip[] _audios;
-    [SerializeField] public AudioClip _sfxClip { get; set; }
+    [SerializeField] public AudioClip _sfxClip;
 
     void Awake()
     {
@@ -32,10 +32,11 @@ public class SoundManager : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         AudioClip newClip = null;
-        if (scene.name == "Start" || scene.name == "FileSelect") newClip = _audios[0];
+        if (scene.name == "Start" || scene.name == "FileSelect" || scene.name == "GameSelect") newClip = _audios[0];
         if (scene.name == "Settings") newClip = _audios[1];
+        if (scene.name == "Useless Shop") newClip = _audios[2];
 
-        if (scene.name == "Jacks Game" || scene.name == "Tyler Wen Game" || scene.name == "Shrimp Swiper") _bgmSource.Pause();
+        if (scene.name == "Jacks Game" || scene.name == "Jack Song Select" || scene.name == "Tyler Wen Game" || scene.name == "Shrimp Swiper") _bgmSource.Pause();
         else if (!_bgmSource.isPlaying) _bgmSource.UnPause();
 
         if (newClip != _bgmSource.clip && newClip != null)

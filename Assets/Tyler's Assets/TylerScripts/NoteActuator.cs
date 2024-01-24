@@ -5,11 +5,14 @@ using UnityEngine;
 public class NoteActuator : MonoBehaviour
 {
     // y value of the start of the song y = 11.25
-    public KeyCode key;
+    public KeyCode Key;
     static public int Combo;
-    private int Score;
+    private int _score;
     static public int TotalScore;
     bool active = false;
+    static public bool Missed;
+    private int _coins;
+    private int _totalCoins;
 
     GameObject note;
     Color old;
@@ -19,27 +22,40 @@ public class NoteActuator : MonoBehaviour
     void Start()
     {
         old = GetComponent<SpriteRenderer>().color;
-        Score = 0;
+        _score = 0;
+        _coins = GetCoins();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(key))
+        if (Input.GetKeyDown(Key))
         {
             GetComponent<SpriteRenderer>().color = new Color(0,0,0);
             if(active)
             {
                 Destroy(note);
                 Combo += 1;
-                Debug.Log(Combo);
-                Score = 197 * Combo;
-                TotalScore = TotalScore + Score; 
+                _score = 197 * Combo;
+                TotalScore = TotalScore + _score;
+                _totalCoins = _coins + TotalScore/100;
+                SetCoins(_totalCoins);
             }
-            //Combo = 0;
+            else
+            {
+                Missed = true;
+                Combo = 0;
+                Debug.Log(GetCoins());
+            }
+
+                
         }
-        if (Input.GetKeyUp(key))
+        if (Input.GetKeyUp(Key))
             GetComponent<SpriteRenderer>().color = old;
+
+
+        CheckHighScores(TotalScore);
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -52,4 +68,30 @@ public class NoteActuator : MonoBehaviour
     {
         active = false; 
     }
+
+    private void CheckHighScores(int Score)
+    {
+        if (Score > PlayerPrefs.GetInt("Highscore"))
+        {
+            PlayerPrefs.SetInt("Highscore", Score);
+            Debug.Log(Score);
+        }
+    }
+
+    public int GetHighScores()
+    {
+        return PlayerPrefs.GetInt("Highscore");
+    }
+
+    public void SetCoins(int Coins)
+    {
+        PlayerPrefs.SetInt("Coins", Coins);
+    }
+
+    public int GetCoins()
+    {
+        return PlayerPrefs.GetInt("Coins");
+    }
+
+
 }

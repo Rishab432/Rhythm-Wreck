@@ -21,6 +21,11 @@ public class Note : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (EventManager.Paused)
+        {
+            rb.velocity = new Vector2(0, 0);
+        }
+        else
+            rb.velocity = new Vector2(0, -speed);
     }
 }

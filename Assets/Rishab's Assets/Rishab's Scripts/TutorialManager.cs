@@ -9,8 +9,15 @@ public class TutorialManager : MonoBehaviour
     private int _currentLine = 0;
     private float _waitTime = 6f;
 
+    private void Start()
+    {
+        _currentLine = 0;
+        _waitTime = 6f;
+    }
+
     void Update()
     {
+        if (PauseManager.Instance.Paused) { return; }
         for (int i = 0; i < _textLines.Length; i++)
         {
             _textLines[i].SetActive(true);

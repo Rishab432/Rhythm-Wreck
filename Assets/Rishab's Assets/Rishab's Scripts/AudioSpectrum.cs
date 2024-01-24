@@ -16,6 +16,7 @@ public class AudioSpectrum : MonoBehaviour
 
     void Update()
     {
+        if (PauseManager.Instance.Paused) { return; }
         if (GameMusicManager.Instance.ReadyToPlay)
             GameMusicManager.Instance.Audio.GetSpectrumData(Spectrum, 0, FFTWindow.Hamming);
 

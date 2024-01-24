@@ -9,8 +9,11 @@ using System;
 
 public class SongManager : MonoBehaviour
 {
+    public static int SongNum = 0;
     public static SongManager Instance;
-    public AudioSource audioSource;
+    public AudioSource MLaudioSource;
+    public AudioSource JTaudioSource;
+
     public Lane[] lanes;
     public float songDelayInSeconds;
     //public double marginOfError; // in seconds
@@ -18,6 +21,8 @@ public class SongManager : MonoBehaviour
     //public int inputDelayInMilliseconds;
 
 
+    public string MLfileLocation;
+    public string JTfileLocation;
     public string fileLocation;
     public float noteTime;
    
@@ -27,9 +32,11 @@ public class SongManager : MonoBehaviour
 
     public static MidiFile midiFile;
 
+
     // Start is called before the first frame update
     void Start()
     {
+
         Instance = this;
         ReadFromFile();
         
@@ -37,6 +44,11 @@ public class SongManager : MonoBehaviour
 
     private void ReadFromFile()
     {
+        if (SongNum == 0)
+            fileLocation = MLfileLocation;
+        if (SongNum == 1)
+            fileLocation = JTfileLocation;
+
         midiFile = MidiFile.Read(Application.streamingAssetsPath + "/" + fileLocation);
         GetDataFromMidi();
     }
@@ -53,11 +65,17 @@ public class SongManager : MonoBehaviour
     }
     public void StartSong()
     {
-        audioSource.Play();
+        if (SongNum == 0)
+            MLaudioSource.Play();
+        if (SongNum == 1)
+            JTaudioSource.Play();
     }
     public static double GetAudioSourceTime()
     {
-        return (double)Instance.audioSource.timeSamples / Instance.audioSource.clip.frequency;
+        if (SongNum == 0)
+            return (double)Instance.MLaudioSource.timeSamples / Instance.MLaudioSource.clip.frequency;
+        else
+            return (double)Instance.JTaudioSource.timeSamples / Instance.JTaudioSource.clip.frequency;
     }
 
 
