@@ -75,6 +75,5 @@ public class DataManager : MonoBehaviour
         {
             Debug.LogError($"Error: Save file could not be found in the given path: {Application.persistentDataPath + "/GameData.dat"}");
         }
-        Debug.Log(Application.persistentDataPath);
     }
 }
