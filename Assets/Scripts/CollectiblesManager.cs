@@ -29,13 +29,68 @@ public class CollectiblesManager : MonoBehaviour
 
     public void BuyCococup()
     {
-        if (FileManager.Instance.Tokens > 20)
+        if (FileManager.Instance.Tokens >= 20)
         {
             FileManager.Instance.RemoveTokens(20);
             FileManager.Instance.ChangeCollectibles("Cococup");
             _collectibles[0].color = Color.white;
             _buyButtons[0].SetActive(false);
             _names[0].SetActive(true);
+        }
+    }
+    public void BuyTikiTotem()
+    {
+        if (FileManager.Instance.Tokens >= 15)
+        {
+            FileManager.Instance.RemoveTokens(15);
+            FileManager.Instance.ChangeCollectibles("Tiki Totem");
+            _collectibles[1].color = Color.white;
+            _buyButtons[1].SetActive(false);
+            _names[1].SetActive(true);
+        }
+    }
+    public void BuyPalmTree()
+    {
+        if (FileManager.Instance.Tokens >= 30)
+        {
+            FileManager.Instance.RemoveTokens(30);
+            FileManager.Instance.ChangeCollectibles("Palm Tree");
+            _collectibles[2].color = Color.white;
+            _buyButtons[2].SetActive(false);
+            _names[2].SetActive(true);
+        }
+    }
+    public void BuyMolaMola()
+    {
+        if (FileManager.Instance.Tokens >= 100)
+        {
+            FileManager.Instance.RemoveTokens(100);
+            FileManager.Instance.ChangeCollectibles("Mola Mola");
+            _collectibles[3].color = Color.white;
+            _buyButtons[3].SetActive(false);
+            _names[3].SetActive(true);
+        }
+    }
+    public void BuyFlowers()
+    {
+        if (FileManager.Instance.Tokens >= 10)
+        {
+            FileManager.Instance.RemoveTokens(10);
+            FileManager.Instance.ChangeCollectibles("Flowers");
+            _collectibles[4].color = Color.white;
+            _buyButtons[4].SetActive(false);
+            _names[4].SetActive(true);
+        }
+    }
+    public void BuySeaShell()
+    {
+        if (FileManager.Instance.Tokens >= 40)
+        {
+            FileManager.Instance.RemoveTokens(40);
+            FileManager.Instance.ChangeCollectibles("Sea Shell");
+            _collectibles[5].color = Color.white;
+            _buyButtons[5].SetActive(false);
+            _names[5].SetActive(true);
         }
     }
 }

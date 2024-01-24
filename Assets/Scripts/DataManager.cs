@@ -20,16 +20,16 @@ public class DataManager : MonoBehaviour
         public string FileName3 { get; set; } = "New Game";
         public string FileName4 { get; set; } = "New Game";
         public int[,] HighScores { get; set; } = new int[,] {
-            { 0, 0, 0, 0 }, // Jacks scores
-            { 0, 0, 0, 0 }, // Tylers scores
-            { 0, 0, 0, 0 }, // Rustins scores
-            { 0, 0, 0, 0 } }; // Rishabs scores
+            { 0, 0, 0, 0 },
+            { 0, 0, 0, 0 },
+            { 0, 0, 0, 0 },
+            { 0, 0, 0, 0 } };
         public int[] Tokens {  get; set; } = new int[] { 0, 0, 0, 0 };
         public List<Dictionary<string, bool>> AllCollectibles = new() {
-            new Dictionary<string, bool>() { { "Cococup", false } },
-            new Dictionary<string, bool>() { { "Cococup", false } },
-            new Dictionary<string, bool>() { { "Cococup", false } },
-            new Dictionary<string, bool>() { { "Cococup", false } } }; // where collectibles across all files are stored, add collectibles to each dict.
+            new Dictionary<string, bool>() { { "Cococup", false }, { "Tiki Totem", false }, { "Palm Tree", false }, { "Mola Mola", false }, { "Flowers", false }, { "Sea Shell", false } },
+            new Dictionary<string, bool>() { { "Cococup", false }, { "Tiki Totem", false }, { "Palm Tree", false }, { "Mola Mola", false }, { "Flowers", false }, { "Sea Shell", false } },
+            new Dictionary<string, bool>() { { "Cococup", false }, { "Tiki Totem", false }, { "Palm Tree", false }, { "Mola Mola", false }, { "Flowers", false }, { "Sea Shell", false } },
+            new Dictionary<string, bool>() { { "Cococup", false }, { "Tiki Totem", false }, { "Palm Tree", false }, { "Mola Mola", false }, { "Flowers", false }, { "Sea Shell", false } } }; // where collectibles across all files are stored, add collectibles to each dict.
         public float BGMSliderVal { get; set; } = 1.00f;
         public float SFXSliderVal { get; set; } = 1.00f;
         public bool BGMToggle { get; set; } = true;

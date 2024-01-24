@@ -95,7 +95,6 @@ public class GameMusicManager : MonoBehaviour
 
         if (Audio.time >= Audio.clip.length)
         {
-            Debug.Log("hi");
             ScoreHolder.Instance.ShowResults = true;
         }
     }
