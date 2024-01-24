@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
+
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;

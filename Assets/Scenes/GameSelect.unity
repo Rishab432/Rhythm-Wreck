@@ -2212,7 +2212,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Jacks Game
+  m_text: Beat Blocker
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e6bd6139b594ea4458cb6ce367ea683c, type: 2}
   m_sharedMaterial: {fileID: 1779655321315635518, guid: e6bd6139b594ea4458cb6ce367ea683c, type: 2}
