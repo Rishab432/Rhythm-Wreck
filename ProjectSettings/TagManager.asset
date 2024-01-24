@@ -3,10 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Shield
-  - glow
-  - enemy
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -14,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - Post Processing
+  - 
   - 
   - 
   - 
@@ -41,12 +38,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
-    uniqueID: 1475697833
+  - name: background
+    uniqueID: 1088326277
     locked: 0
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Front
-    uniqueID: 53219793
     locked: 0
