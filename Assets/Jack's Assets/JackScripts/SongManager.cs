@@ -9,10 +9,12 @@ using System;
 
 public class SongManager : MonoBehaviour
 {
-    public static int SongNum = 0;
+
     public static SongManager Instance;
+    public static int SongNum = 0;
     public AudioSource MLaudioSource;
     public AudioSource JTaudioSource;
+    private AudioSource audioSource;
 
     public Lane[] lanes;
     public float songDelayInSeconds;
@@ -38,6 +40,10 @@ public class SongManager : MonoBehaviour
     {
 
         Instance = this;
+        if (SongNum == 0)
+            audioSource = MLaudioSource;
+        if (SongNum == 1)
+            audioSource = JTaudioSource;
         ReadFromFile();
         
     }
@@ -65,17 +71,13 @@ public class SongManager : MonoBehaviour
     }
     public void StartSong()
     {
-        if (SongNum == 0)
-            MLaudioSource.Play();
-        if (SongNum == 1)
-            JTaudioSource.Play();
+        audioSource.Play();
+
     }
     public static double GetAudioSourceTime()
-    {
-        if (SongNum == 0)
-            return (double)Instance.MLaudioSource.timeSamples / Instance.MLaudioSource.clip.frequency;
-        else
-            return (double)Instance.JTaudioSource.timeSamples / Instance.JTaudioSource.clip.frequency;
+    {   
+        return (double)Instance.audioSource.timeSamples / Instance.audioSource.clip.frequency;
+        
     }
 
 
@@ -83,6 +85,10 @@ public class SongManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (audioSource.isPlaying == false && GetAudioSourceTime()  > 10)
+        {
+
+            ScoreManager.Instance.ShowResults = true;
+        }
     }
 }

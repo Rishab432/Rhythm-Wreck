@@ -12,9 +12,11 @@ public class GetDropdownValue : MonoBehaviour
     [SerializeField]
     private AudioSource JTaudioSource;
 
+
     public void Start()
     {
         MLaudioSource.Play();
+
     }
     public void HandleInputData()
     {
