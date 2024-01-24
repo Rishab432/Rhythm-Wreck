@@ -16,10 +16,9 @@ public class Animation_Manager : MonoBehaviour
     {
         if (NoteActuator.Combo == 0)
         {
-            animator.PlayInFixedTime("ClipName", 1, 0.0f);
             animator.SetBool("if_missed", true);
         }
-        else
+        else if (NoteActuator.Combo >= 5)
             animator.SetBool("if_missed",false);
     }
 }
