@@ -38,12 +38,12 @@ public class CollectiblesManager : MonoBehaviour
             _names[0].SetActive(true);
         }
     }
-    public void BuyTikiTotem()
+    public void BuyShrimpHat()
     {
         if (FileManager.Instance.Tokens >= 15)
         {
             FileManager.Instance.RemoveTokens(15);
-            FileManager.Instance.ChangeCollectibles("Tiki Totem");
+            FileManager.Instance.ChangeCollectibles("Shrimp Hat");
             _collectibles[1].color = Color.white;
             _buyButtons[1].SetActive(false);
             _names[1].SetActive(true);
