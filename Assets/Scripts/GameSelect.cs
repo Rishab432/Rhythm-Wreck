@@ -12,7 +12,7 @@ public class GameSelect : MonoBehaviour
 
     public void ToTylersGame()
     {
-        SceneManager.LoadScene("Tyler Wen Game");
+        SceneManager.LoadScene("Tyler Wen Game Menu");
     }
 
     public void ToRustinsGame()

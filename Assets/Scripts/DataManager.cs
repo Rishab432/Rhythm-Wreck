@@ -42,9 +42,11 @@ public class DataManager : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Log(Application.persistentDataPath);
         if (Instance == null)
         {
             Instance = this;
+            Debug.Log(Application.persistentDataPath);
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -52,6 +54,8 @@ public class DataManager : MonoBehaviour
             Destroy(gameObject);
         }
         LoadData();
+        Debug.Log(Application.persistentDataPath);
+
     }
 
     public void SaveData()
@@ -65,6 +69,7 @@ public class DataManager : MonoBehaviour
 
     public void LoadData()
     {
+        Debug.Log(Application.persistentDataPath);
         if (File.Exists(Application.persistentDataPath + "/GameData.dat"))
         {
             BinaryFormatter binaryFormatter = new();
