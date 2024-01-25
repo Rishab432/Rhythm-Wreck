@@ -40,6 +40,10 @@ added into the input list in the next funcitons
     {
         _value = 5;
     }
+    public virtual void SetValueToTititi()
+    {
+        _value = 6;
+    }
 /*
 These functions set values to their respective indexes of the input list based
 on the user input given in the previous funcitons.
@@ -86,11 +90,21 @@ default state regardless of if the player gets the answer correct.
         }
 
         Aud.Play();
+        RustinScore.SetRounds(RustinScore.GetRounds() + 1);
         RustinScore.ResetTimes();
         RhythmMatcher.Instance.RhythmList = new int[4] { Random.Range(1, 6), Random.Range(1, 6), Random.Range(1, 6), Random.Range(1, 6) };
         _inputList = new int[4];
     }
+    public void PlayAgain()
+    {
+        RustinScore.SetRounds(0);
+        RustinScore.SetScore();
+        RustinScore.ResetTimes();
+        ImageCursor.Instance.Reset();
+        RhythmMatcher.Instance.RhythmList = new int[4] { Random.Range(1, 6), Random.Range(1, 6), Random.Range(1, 6), Random.Range(1, 6) };
+        _inputList = new int[4];
 
+    }
     /*
     This function recursively iterates through the input and rhythm lists to check 
     if all values are equal. If they are, it returns the value true.hu

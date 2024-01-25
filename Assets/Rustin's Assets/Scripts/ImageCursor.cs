@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ImageCursor : NoteButtons
 {
+    public static ImageCursor Instance;
 
     public Image Hold;
     public Image Img1;
@@ -12,11 +13,13 @@ public class ImageCursor : NoteButtons
     public Image Img3;
     public Image Img4;
 
+    public Sprite None;
     public Sprite Grape;
     public Sprite Kiwi;
     public Sprite Pineapple;
     public Sprite Coconut;
     public Sprite Watermelon;
+    public Sprite Banana;
 
     /*
 These functions set the hold value to their respective fruits. They later get
@@ -42,6 +45,10 @@ added into the input list in the next funcitons
     {
         Hold.sprite = Watermelon;
     }
+    public override void SetValueToTititi()
+    {
+        Hold.sprite = Banana;
+    }
     /*
     These functions set values to their respective indexes of the input list based
     on the user input given in the previous funcitons.
@@ -57,8 +64,11 @@ added into the input list in the next funcitons
             Img1.sprite = Pineapple;
         else if (NoteButtons.GetValue() - 1 == 3)
             Img1.sprite = Coconut;
-        else 
+        else if (NoteButtons.GetValue() - 1 == 4)
             Img1.sprite = Watermelon;
+        else
+            Img1.sprite = Banana;
+
     }
     public override void SetIndexValueTwo()
     {
@@ -70,8 +80,10 @@ added into the input list in the next funcitons
             Img2.sprite = Pineapple;
         else if (NoteButtons.GetValue() - 1 == 3)
             Img2.sprite = Coconut;
-        else
+        else if (NoteButtons.GetValue() - 1 == 4)
             Img2.sprite = Watermelon;
+        else
+            Img2.sprite = Banana;
     }
     public override void SetIndexValueThree()
     {
@@ -83,8 +95,10 @@ added into the input list in the next funcitons
             Img3.sprite = Pineapple;
         else if (NoteButtons.GetValue() - 1 == 3)
             Img3.sprite = Coconut;
-        else
+        else if (NoteButtons.GetValue() - 1 == 4)
             Img3.sprite = Watermelon;
+        else
+            Img3.sprite = Banana;
     }
     public override void SetIndexValueFour()
     {
@@ -96,14 +110,23 @@ added into the input list in the next funcitons
             Img4.sprite = Pineapple;
         else if (NoteButtons.GetValue() - 1 == 3)
             Img4.sprite = Coconut;
-        else
+        else if (NoteButtons.GetValue() - 1 == 4)
             Img4.sprite = Watermelon;
+        else
+            Img4.sprite = Banana;
     }
-
+    public void Reset()
+    {
+        Img1.sprite = None;
+        Img2.sprite = None;
+        Img3.sprite = None;
+        Img4.sprite = None;
+    }
     // Start is called before the first frame update
     void Start()
     {
-
+        if (Instance == null)
+            Instance = this;
     }
 
 // Update is called once per frame

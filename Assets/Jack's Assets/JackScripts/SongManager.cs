@@ -85,7 +85,15 @@ public class SongManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (audioSource.isPlaying == false && GetAudioSourceTime()  > 10)
+        if (Time.timeScale == 0)
+        {
+            audioSource.Pause();
+        }
+        if (Time.timeScale == 1)
+        {
+            audioSource.UnPause();
+        }
+        if (audioSource.isPlaying == false && GetAudioSourceTime()  > 10 && Time.timeScale == 1)
         {
 
             ScoreManager.Instance.ShowResults = true;

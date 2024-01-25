@@ -22,6 +22,7 @@ public class PauseManager : MonoBehaviour
     public void PauseGame()
     {
         _pauseMenu.SetActive(true);
+       
         _pauseButton.SetActive(false);
         Paused = true;
         Time.timeScale = 0f;
@@ -29,6 +30,7 @@ public class PauseManager : MonoBehaviour
 
     public void ResumeGame()
     {
+        Debug.Log("mrtyui");
         _pauseMenu.SetActive(false);
         _pauseButton.SetActive(true);
         Paused = false;

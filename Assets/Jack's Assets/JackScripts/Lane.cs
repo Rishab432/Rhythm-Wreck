@@ -10,6 +10,7 @@ public class Lane : MonoBehaviour
     public Melanchall.DryWetMidi.MusicTheory.NoteName noteRestriction;
     public KeyCode input;
     public GameObject notePrefab;
+    public GameObject shinyPrefab;
     public float noteSpawnY;
     public float noteDespawnY
     {
@@ -57,9 +58,21 @@ public class Lane : MonoBehaviour
         {
             if (SongManager.GetAudioSourceTime() >= timeStamps[spawnIndex] - SongManager.Instance.noteTime)
             {
-                var note = Instantiate(notePrefab, transform);
-                notes.Add(note.GetComponent<Rock>());
-                note.GetComponent<Rock>().assignedTime = (float)timeStamps[spawnIndex];
+
+                if (UnityEngine.Random.Range(0, 80) != 1)
+                {
+                    var note = (Instantiate(notePrefab, transform));
+                    notes.Add(note.GetComponent<Rock>());
+                    note.GetComponent<Rock>().assignedTime = (float)timeStamps[spawnIndex];
+                }
+                else
+                {
+                    var note = (Instantiate(shinyPrefab, transform));
+                    notes.Add(note.GetComponent<Rock>());
+                    note.GetComponent<Rock>().assignedTime = (float)timeStamps[spawnIndex];
+                }
+
+
                 spawnIndex++;
             }
         }
