@@ -60,12 +60,13 @@ public class CollectiblesManager : MonoBehaviour
             _names[2].SetActive(true);
         }
     }
-    public void BuyMolaMola()
+    public void BuyBanana()
     {
-        if (FileManager.Instance.Tokens >= 100)
+        if (FileManager.Instance.Tokens >= 25)
         {
-            FileManager.Instance.RemoveTokens(100);
-            FileManager.Instance.ChangeCollectibles("Mola Mola");
+            RhythmMatcher.Instance.SetBanana();
+            FileManager.Instance.RemoveTokens(25);
+            FileManager.Instance.ChangeCollectibles("banana");
             _collectibles[3].color = Color.white;
             _buyButtons[3].SetActive(false);
             _names[3].SetActive(true);

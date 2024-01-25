@@ -5,15 +5,16 @@ using TMPro;
 
 public class RustinScore : MonoBehaviour
 {
-    private int _rounds = 0;
+    private static int _rounds = 0;
 
     public TextMeshProUGUI Score;
 
     private static int _scoreNum = 0;
     private static int _timesReplayed = 0;
 
-    private int[] _previousScores = new int[1];
+    private static int[] _previousScores = new int[1];
 
+    public GameObject EndScreenObject;
     // Start is called before the first frame update
     public static void SubScore()
     {
@@ -27,11 +28,33 @@ public class RustinScore : MonoBehaviour
     {
         _timesReplayed = 0;
     }
+    public static int GetScore()
+    {
+        return _scoreNum;
+    }
+    public static void SetScore()
+    {
+        _scoreNum = 0;
+    }
+    public static int[] GetPreviousScores()
+    {
+        return _previousScores;
+    }
     public void EndGame()
     {
         AddScore(_scoreNum);
         ScoreSort(_previousScores);
+        EndScreenObject.SetActive(true);
+        EndScreen.Instance.Setup();
         _scoreNum = 0;
+    }
+    public static void SetRounds(int round)
+    {
+        _rounds = round;
+    }
+    public static int GetRounds()
+    {
+        return _rounds;
     }
     private void ScoreSort(int[] list)
     {
@@ -54,7 +77,7 @@ public class RustinScore : MonoBehaviour
         }
 
     }
-    public void AddScore(int n)
+    public static void AddScore(int n)
     {
         int[] newList = new int[_previousScores.Length + 1];
         for (int i = 0; i < _previousScores.Length; i += 1)
@@ -66,7 +89,6 @@ public class RustinScore : MonoBehaviour
     }
     void Start()
     {
-        Score = FindObjectOfType<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
@@ -82,8 +104,11 @@ public class RustinScore : MonoBehaviour
 
         if (_rounds >= 10)
         {
-            Debug.Log("End");
             EndGame();
+            Debug.Log("End");
         }
     }
 }
+//FileManager.Instance.AddTokens(8);
+//FileManager.Instance.ChangeHighScore(3, Score);
+//FileManager.Instance.Change(3, Score);
