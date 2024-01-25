@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Shield
+  - glow
   layers:
   - Default
   - TransparentFX
@@ -43,4 +45,7 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ui
+    uniqueID: 1992226839
     locked: 0
