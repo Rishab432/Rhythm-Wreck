@@ -17,7 +17,7 @@ public class GameSelect : MonoBehaviour
 
     public void ToRustinsGame()
     {
-        // Put loadscene with scene name here.
+        SceneManager.LoadScene("Rustin's game");
     }
 
     public void ToRishabsGame()
