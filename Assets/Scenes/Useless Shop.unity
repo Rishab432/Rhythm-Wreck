@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 159316461}
   - component: {fileID: 159316460}
   m_Layer: 0
-  m_Name: TIKI TOTEM Button
+  m_Name: SHRIMP HAT Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -342,7 +342,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2120153596}
         m_TargetAssemblyTypeName: CollectiblesManager, Assembly-CSharp
-        m_MethodName: BuyTikiTotem
+        m_MethodName: BuyShrimpHat
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1531,7 +1531,7 @@ GameObject:
   - component: {fileID: 751065838}
   - component: {fileID: 751065839}
   m_Layer: 0
-  m_Name: TIKI TOTEM
+  m_Name: SHRIMP HAT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1600,7 +1600,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6e1365f5948700343a27ad71772b4b9f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6f945fc848b83744496d86f9ce9ed8c2, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3111,7 +3111,7 @@ GameObject:
   - component: {fileID: 1528505456}
   - component: {fileID: 1528505455}
   m_Layer: 0
-  m_Name: TIKI TOTEM Name
+  m_Name: SHRIMP HAT Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3156,7 +3156,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: <TIKI TOTEM>
+  m_text: <SHRIMP HAT>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e6bd6139b594ea4458cb6ce367ea683c, type: 2}
   m_sharedMaterial: {fileID: 1779655321315635518, guid: e6bd6139b594ea4458cb6ce367ea683c, type: 2}
