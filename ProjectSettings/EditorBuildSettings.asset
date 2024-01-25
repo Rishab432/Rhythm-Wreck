@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Jack Song Select.unity
     guid: 498582d1c2a6649a788818b644d4da81
+  - enabled: 1
+    path: Assets/Scenes/Rustin's game.unity
+    guid: 3eb92da713eea4815958175be2cd0740
   m_configObjects: {}
