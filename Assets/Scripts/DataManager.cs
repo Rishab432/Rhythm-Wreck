@@ -26,17 +26,11 @@ public class DataManager : MonoBehaviour
             { 0, 0, 0, 0 } };
         public int[] Tokens {  get; set; } = new int[] { 0, 0, 0, 0 };
         public List<Dictionary<string, bool>> AllCollectibles = new() {
-<<<<<<< Updated upstream
-            new Dictionary<string, bool>() { { "Cococup", false }, { "Shrimp Hat", false }, { "Palm Tree", false }, { "Mola Mola", false }, { "Flowers", false }, { "Sea Shell", false } },
-            new Dictionary<string, bool>() { { "Cococup", false }, { "Shrimp Hat", false }, { "Palm Tree", false }, { "Mola Mola", false }, { "Flowers", false }, { "Sea Shell", false } },
-            new Dictionary<string, bool>() { { "Cococup", false }, { "Shrimp Hat", false }, { "Palm Tree", false }, { "Mola Mola", false }, { "Flowers", false }, { "Sea Shell", false } },
-            new Dictionary<string, bool>() { { "Cococup", false }, { "Shrimp Hat", false }, { "Palm Tree", false }, { "Mola Mola", false }, { "Flowers", false }, { "Sea Shell", false } } }; // where collectibles across all files are stored, add collectibles to each dict.
-=======
             new Dictionary<string, bool>() { { "Cococup", false }, { "Tiki Totem", false }, { "Palm Tree", false }, { "banana", false }, { "Flowers", false }, { "Sea Shell", false } },
             new Dictionary<string, bool>() { { "Cococup", false }, { "Tiki Totem", false }, { "Palm Tree", false }, { "banana", false }, { "Flowers", false }, { "Sea Shell", false } },
             new Dictionary<string, bool>() { { "Cococup", false }, { "Tiki Totem", false }, { "Palm Tree", false }, { "banana", false }, { "Flowers", false }, { "Sea Shell", false } },
             new Dictionary<string, bool>() { { "Cococup", false }, { "Tiki Totem", false }, { "Palm Tree", false }, { "banana", false }, { "Flowers", false }, { "Sea Shell", false } } }; // where collectibles across all files are stored, add collectibles to each dict.
->>>>>>> Stashed changes
+
         public float BGMSliderVal { get; set; } = 1.00f;
         public float SFXSliderVal { get; set; } = 1.00f;
         public bool BGMToggle { get; set; } = true;
