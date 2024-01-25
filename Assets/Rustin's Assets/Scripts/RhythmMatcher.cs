@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class RhythmMatcher : MonoBehaviour
 {
@@ -17,7 +17,9 @@ Initializing variables
     public AudioClip TiTika;
     public AudioClip TikaTi;
     public AudioClip TikaTika;
-
+    public AudioClip Tititi;
+    private int _unlockBanana = 0;
+    public GameObject Banana;
     public int[] RhythmList = new int[4];
 
     private float _waitTime = 3/4f;
@@ -43,6 +45,8 @@ with a clip.
             Aud.clip = TikaTi;
         if (currentAudio == 5)
             Aud.clip = TikaTika;
+        if (currentAudio == 6)
+            Aud.clip = Tititi;
         Aud.Play();
     }
 /*
@@ -63,6 +67,16 @@ the space bar.
             _iteration++;
         }
     }
+    public void SetBanana()
+    {
+        _unlockBanana = 1;
+        Banana.SetActive(true);
+    }
+    public void GoMain()
+    {
+        SoundManager.Instance.UnPause();
+        SceneManager.LoadScene("GameSelect");
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -73,7 +87,7 @@ functions depend on this one to perform their tasks correctly.
 */
 
         Instance = this;
-        RhythmList = new int[4] { Random.Range(1, 6), Random.Range(1, 6), Random.Range(1, 6), Random.Range(1, 6) };
+        RhythmList = new int[4] { Random.Range(1, 6 + _unlockBanana), Random.Range(1, 6 + _unlockBanana), Random.Range(1, 6 + _unlockBanana), Random.Range(1, 6 + _unlockBanana) };
 
     }
     // Update is called once per frame
