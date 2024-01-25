@@ -18,5 +18,6 @@ public class Score : MonoBehaviour
     {
         ComboText.text = NoteActuator.Combo.ToString() + "x";
         ScoreText.text = NoteActuator.TotalScore.ToString();
+
     }
 }

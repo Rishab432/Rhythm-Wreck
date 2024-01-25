@@ -23,6 +23,7 @@ public class Note : MonoBehaviour
     {
         if (EventManager.Paused)
         {
+            
             rb.velocity = new Vector2(0, 0);
         }
         else

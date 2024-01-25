@@ -11,11 +11,7 @@ public class NoteActuator : MonoBehaviour
     static public int TotalScore;
     bool active = false;
     static public bool Missed;
-
-    public bool GradeS;
-    public bool GradeA;
-    public bool GradeB;
-    public bool GradeF;
+    static public int MaxCombo;
 
     GameObject note;
     Color old;
@@ -26,6 +22,8 @@ public class NoteActuator : MonoBehaviour
     {
         old = GetComponent<SpriteRenderer>().color;
         _score = 0;
+        MaxCombo = 0;
+
 
     }
 
@@ -53,69 +51,43 @@ public class NoteActuator : MonoBehaviour
         if (Input.GetKeyUp(Key))
             GetComponent<SpriteRenderer>().color = old;
 
-
-        CheckHighScores(TotalScore);
+        CheckMaxCombo();
+        //CheckHighScores();
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        active = true;
-        if (col.gameObject.tag == "Note")
+        if(col.gameObject.tag == "LastNote"){
+            Debug.Log("hitt");
+            GameManager.Instance.Grade();
+        }
+
+        if (col.gameObject.tag == "Note"){
+            active = true;
             note = col.gameObject;
+
+        }
     }
     private void OnTriggerExit2D(Collider2D col)
     {
         active = false; 
     }
 
-    private void CheckHighScores(int Score)
+    public void CheckMaxCombo()
     {
-        if (Score > PlayerPrefs.GetInt("Highscore"))
-        {
-            PlayerPrefs.SetInt("Highscore", Score);
-            Debug.Log(Score);
+        if(Combo > MaxCombo){
+            MaxCombo = Combo;
+            Debug.Log(MaxCombo);
         }
     }
+    //public void CheckHighScores()
+    //{
+        //if (TotalScore >  FileManager.Instance.HighScores[0])
+        //{
+            //FileManager.Instance.ChangeHighScore(0, TotalScore);
+            //Debug.Log(TotalScore);
+        //}
+    //}
 
-    public int GetHighScores()
-    {
-        return PlayerPrefs.GetInt("Highscore");
-    }
 
-    public void Grade(int Score)
-    {
-        if (Score > 2500000)
-        {
-            GradeS = true;
-            GradeA = false;
-            GradeB = false;
-            GradeF = false;
-            FileManager.Instance.AddTokens(8);
-        }
-        else if (Score > 2000000)
-        {
-            GradeS = false;
-            GradeA = true;
-            GradeB = false;
-            GradeF = false;
-            FileManager.Instance.AddTokens(6);
-
-        }
-        else if (Score > 1200000)
-        {
-            GradeS = false;
-            GradeA = false;
-            GradeB = true;
-            GradeF = false;
-            FileManager.Instance.AddTokens(4);
-        }
-        else
-        {
-            GradeS = false;
-            GradeA = false;
-            GradeB = false;
-            GradeF = true;
-            FileManager.Instance.AddTokens(2);
-        }
-    }
 }
