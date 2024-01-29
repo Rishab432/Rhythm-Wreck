@@ -5,6 +5,7 @@ using UnityEditor.SceneManagement;
 
 public class NoteActuator : MonoBehaviour
 {
+    public static NoteActuator Instance;
     public KeyCode Key;
     static public int Combo;
     private int _score;
@@ -18,6 +19,9 @@ public class NoteActuator : MonoBehaviour
     static public int HighScore2;
     static public int HighScore3;
 
+    private TopScores TopScoreManager;
+    public int NewScore;
+
 
     GameObject note;
     Color old;
@@ -26,10 +30,12 @@ public class NoteActuator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Instance = this;
         old = GetComponent<SpriteRenderer>().color;
         _score = 0;
+        TotalScore = 0;
         MaxCombo = 0;
-
+        TopScoreManager = FindObjectOfType<TopScores>();
 
 
     }
@@ -57,9 +63,9 @@ public class NoteActuator : MonoBehaviour
         }
         if (Input.GetKeyUp(Key))
             GetComponent<SpriteRenderer>().color = old;
+        PlayerPrefs.SetInt("NewScore",TotalScore);
 
-        CheckMaxCombo();
-        CheckHighScores();
+       
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -80,36 +86,8 @@ public class NoteActuator : MonoBehaviour
         active = false; 
     }
 
-    public void CheckMaxCombo()
-    {
-        if(Combo > MaxCombo){
-            MaxCombo = Combo;
-            Debug.Log(MaxCombo);
-        }
-    }
-    public void CheckHighScores()
-    {
-        HighScore1 = PlayerPrefs.GetInt("HighScore1");
-        HighScore2 = PlayerPrefs.GetInt("HighScore2");
-        HighScore3 = PlayerPrefs.GetInt("HighScore3");
-
-        if (TotalScore > HighScore1)
-        {
-            PlayerPrefs.SetInt("HighScore3", HighScore2);
-            PlayerPrefs.SetInt("HighScore2", HighScore1);
-            PlayerPrefs.SetInt("HighScore1", TotalScore);
-        }
-        else if (TotalScore > HighScore2)
-        {
-            PlayerPrefs.SetInt("HighScore3", HighScore2);
-            PlayerPrefs.SetInt("HighScore2", TotalScore);
-        }
-        else if (TotalScore > HighScore3)
-        {
-            PlayerPrefs.SetInt("HighScore3", TotalScore);
-        }
-
-    }
-
-
+    //public void SetNewScore()
+    //{
+      // PlayerPrefs.SetInt("NewScore",TotalScore);
+    //}
 }
