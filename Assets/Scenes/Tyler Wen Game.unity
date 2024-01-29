@@ -45882,6 +45882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b3609f830fc7f841938f1cc0ca7f739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ExitKey: 98
   _beatmapAudio: {fileID: 1323889990}
   _missAudio: {fileID: 57551807}
   _gradeSAudio: {fileID: 2082078874}

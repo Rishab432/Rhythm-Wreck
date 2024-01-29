@@ -7,6 +7,7 @@ public class NoteActuator : MonoBehaviour
 {
     public static NoteActuator Instance;
     public KeyCode Key;
+    public KeyCode Exit;
     static public int Combo;
     private int _score;
     static public int TotalScore;
@@ -71,7 +72,6 @@ public class NoteActuator : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         if(col.gameObject.tag == "LastNote"){
-            Debug.Log("hitt");
             GameManager.Instance.Grade();
         }
 
