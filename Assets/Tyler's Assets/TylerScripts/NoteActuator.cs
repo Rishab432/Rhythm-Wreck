@@ -12,6 +12,12 @@ public class NoteActuator : MonoBehaviour
     bool active = false;
     static public bool Missed;
     static public int MaxCombo;
+    static public int[] TopScores = new int[3];
+
+    static public int HighScore1;
+    static public int HighScore2;
+    static public int HighScore3;
+
 
     GameObject note;
     Color old;
@@ -23,6 +29,7 @@ public class NoteActuator : MonoBehaviour
         old = GetComponent<SpriteRenderer>().color;
         _score = 0;
         MaxCombo = 0;
+
 
 
     }
@@ -52,7 +59,7 @@ public class NoteActuator : MonoBehaviour
             GetComponent<SpriteRenderer>().color = old;
 
         CheckMaxCombo();
-        //CheckHighScores();
+        CheckHighScores();
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -80,14 +87,29 @@ public class NoteActuator : MonoBehaviour
             Debug.Log(MaxCombo);
         }
     }
-    //public void CheckHighScores()
-    //{
-        //if (TotalScore >  FileManager.Instance.HighScores[0])
-        //{
-            //FileManager.Instance.ChangeHighScore(0, TotalScore);
-            //Debug.Log(TotalScore);
-        //}
-    //}
+    public void CheckHighScores()
+    {
+        HighScore1 = PlayerPrefs.GetInt("HighScore1");
+        HighScore2 = PlayerPrefs.GetInt("HighScore2");
+        HighScore3 = PlayerPrefs.GetInt("HighScore3");
+
+        if (TotalScore > HighScore1)
+        {
+            PlayerPrefs.SetInt("HighScore3", HighScore2);
+            PlayerPrefs.SetInt("HighScore2", HighScore1);
+            PlayerPrefs.SetInt("HighScore1", TotalScore);
+        }
+        else if (TotalScore > HighScore2)
+        {
+            PlayerPrefs.SetInt("HighScore3", HighScore2);
+            PlayerPrefs.SetInt("HighScore2", TotalScore);
+        }
+        else if (TotalScore > HighScore3)
+        {
+            PlayerPrefs.SetInt("HighScore3", TotalScore);
+        }
+
+    }
 
 
 }

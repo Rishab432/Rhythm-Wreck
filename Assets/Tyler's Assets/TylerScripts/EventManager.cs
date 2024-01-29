@@ -37,7 +37,7 @@ public class EventManager : MonoBehaviour
 
     public void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("Tyler Wen Game Menu");
     }
 
     public void QuitGame()

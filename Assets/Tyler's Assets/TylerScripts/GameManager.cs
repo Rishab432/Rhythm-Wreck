@@ -84,6 +84,11 @@ public class GameManager : MonoBehaviour
             _gradeFAudio.Play();
             FileManager.Instance.AddTokens(2);
         }
+
+        if (Input.GetKey("escape"))
+        {
+            SceneManager.LoadScene("GameSelect");
+        }
     }
 
 }
