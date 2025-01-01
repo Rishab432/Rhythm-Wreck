@@ -90,10 +90,9 @@ public class ScoreManager : MonoBehaviour
         _returnTime -= Time.deltaTime;
         if (_returnTime < 0)
         {
-            if (score > FileManager.Instance.HighScores[0])
-                FileManager.Instance.ChangeHighScore(0, score);
             
-            SceneManager.LoadScene("GameSelect");
+            
+            SceneManager.LoadScene("Jack Song Select");
         }
     }
     public void Results()
@@ -112,35 +111,30 @@ public class ScoreManager : MonoBehaviour
                 _failure.Play();
                 _scoreText.color = Color.magenta;
                 _scoreText.text = "eh, just ok...";
-                FileManager.Instance.AddTokens(1);
             }
             else if (score < nbScore)
             {
                 _success.Play();
                 _scoreText.color = Color.blue;
                 _scoreText.text = "not bad.";
-                FileManager.Instance.AddTokens(2);
             }
             else if (score < niceScore)
             {
                 _success.Play();
                 _scoreText.color = Color.yellow;
                 _scoreText.text = "nice job!";
-                FileManager.Instance.AddTokens(4);
             }
             else if (score < specScore)
             {
                 _success.Play();
                 _scoreText.color = new Color(1f, 0.6f, 0.01f);
                 _scoreText.text = "spectacular!!";
-                FileManager.Instance.AddTokens(6);
             }
             else
             {
                 _success.Play();
                 _scoreText.color = Color.red;
                 _scoreText.text = "perfection!!!";
-                FileManager.Instance.AddTokens(8);
             }
             ShowResults = false;
             _done = true;
